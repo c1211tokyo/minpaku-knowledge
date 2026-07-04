@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minpakuk.1211.world/sitemap.xml

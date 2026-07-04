@@ -1,0 +1,61 @@
+[
+  {
+    "title": "权利与规约",
+    "types": ["preopen", "minpaku", "ryokan"],
+    "items": [
+      {"id": "rights-owner", "label": "取得所有权或房东书面承诺", "note": "租赁、转租和用途变更范围应明确写入。"},
+      {"id": "rights-bylaw", "label": "确认管理规约及管理组合意思", "note": "分售公寓不得只依赖口头说明。"},
+      {"id": "rights-register", "label": "核对登记录、合同和实际房间", "note": "地址、楼层、房号、面积和权利人应一致。"}
+    ]
+  },
+  {
+    "title": "用途与建筑",
+    "types": ["preopen", "minpaku", "ryokan"],
+    "items": [
+      {"id": "build-zone", "label": "确认用途地域与区条例限制", "note": "保存自治体地图或窗口确认记录。"},
+      {"id": "build-plan", "label": "准备现况平面图和面积表", "note": "标明出入口、窗、设备、避难路线和各室用途。"},
+      {"id": "build-change", "label": "确认用途变更和建筑手续", "note": "由建筑部门或建筑士判断，不凭房产广告。"}
+    ]
+  },
+  {
+    "title": "消防与安全",
+    "types": ["preopen", "minpaku", "ryokan", "fire"],
+    "items": [
+      {"id": "fire-consult", "label": "预约管辖消防署事前咨询", "note": "携带地址、用途、面积、楼层和图纸。"},
+      {"id": "fire-equipment", "label": "取得必要消防设备初步清单", "note": "设备要求取决于具体建筑和使用方式。"},
+      {"id": "fire-route", "label": "确认避难路线、标识和防炎物品", "note": "施工前确认，避免完工后返工。"},
+      {"id": "fire-filing", "label": "确认消防相关届出与检查", "note": "记录表格、提交期限和检查预约。"}
+    ]
+  },
+  {
+    "title": "届出与许可",
+    "types": ["minpaku", "ryokan"],
+    "items": [
+      {"id": "apply-consult", "label": "完成主管窗口事前咨询", "note": "确认适用制度、表格版本和提交方式。"},
+      {"id": "apply-neighbor", "label": "按当地规则完成近邻说明", "note": "保留范围、日期、方式、资料和处理记录。"},
+      {"id": "apply-docs", "label": "逐项核对附件与证明", "note": "以当地当前清单为准，不复用旧项目文件。"},
+      {"id": "apply-sign", "label": "确认标识掲示及开业起点", "note": "不得在法定手续完成前开始接客。"}
+    ]
+  },
+  {
+    "title": "卫生与运营",
+    "types": ["preopen", "minpaku", "ryokan", "operations"],
+    "items": [
+      {"id": "ops-register", "label": "建立宿泊者名簿和本人确认流程", "note": "明确保存、访问权限和异常处理。"},
+      {"id": "ops-waste", "label": "确定事业系垃圾处理", "note": "不得默认使用家庭垃圾收集方式。"},
+      {"id": "ops-manager", "label": "确定管理委托和紧急响应", "note": "合同、覆盖时间、到场要求和替补人员应明确。"},
+      {"id": "ops-rules", "label": "准备多语言入住与生活规则", "note": "覆盖噪音、吸烟、垃圾、设备和紧急联络。"},
+      {"id": "ops-report", "label": "建立定期报告和变更提醒", "note": "记录营业日数、人数、国籍和变更事项。"}
+    ]
+  },
+  {
+    "title": "开业与交接",
+    "types": ["operations", "ryokan"],
+    "items": [
+      {"id": "open-clean", "label": "完成清扫与布草检查表", "note": "包含照片、异常、补充和复检。"},
+      {"id": "open-emergency", "label": "张贴紧急联络和避难信息", "note": "确保宿泊者能理解并可在断网时使用。"},
+      {"id": "open-incident", "label": "建立投诉、事故和遗失物记录", "note": "记录时间、响应、证据和后续改善。"},
+      {"id": "open-ota", "label": "核对OTA刊登内容与许可信息", "note": "名称、地址、编号、人数和设施说明应一致。"}
+    ]
+  }
+]

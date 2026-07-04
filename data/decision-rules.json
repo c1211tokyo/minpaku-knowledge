@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "id": "location",
+      "title": "物件是否位于东京都大田区？",
+      "followup": "确认物件所在自治体和主管窗口",
+      "options": [
+        {"id": "ota", "label": "是，位于大田区", "score": {"tokku": 3, "minpaku": 1, "ryokan": 1}, "reason": "大田区同时存在住宅宿泊事业、旅馆业和特区民泊路径。"},
+        {"id": "other", "label": "否，位于东京其他区", "score": {"minpaku": 1, "ryokan": 1, "tokku": -5}, "reason": "东京其他区通常不适用大田区特区民泊路径。"},
+        {"id": "unknown", "label": "尚未确定", "score": {}, "unresolved": "先确定具体区和主管自治体"}
+      ]
+    },
+    {
+      "id": "days",
+      "title": "是否计划一年营业超过180日？",
+      "followup": "明确年度营业天数目标",
+      "options": [
+        {"id": "yes", "label": "是，希望超过180日", "score": {"ryokan": 4, "minpaku": -5, "tokku": 2}, "reason": "住宅宿泊事业原则上不适合超过180日的营业目标。"},
+        {"id": "no", "label": "否，180日以内可以接受", "score": {"minpaku": 3, "ryokan": 1, "tokku": 1}, "reason": "180日以内与住宅宿泊事业的法定上限方向一致。"},
+        {"id": "unknown", "label": "尚未确定", "score": {}, "unresolved": "先完成营业日数和收益模型"}
+      ]
+    },
+    {
+      "id": "dwelling",
+      "title": "物件是否可能满足“住宅”设备与居住要件？",
+      "followup": "确认台所、浴室、便所、洗面设备及居住要件",
+      "options": [
+        {"id": "yes", "label": "可能满足", "score": {"minpaku": 3, "tokku": 1}, "reason": "满足住宅要件是住宅宿泊事业的基础条件。"},
+        {"id": "no", "label": "不满足或仅按住宿设施使用", "score": {"minpaku": -5, "ryokan": 3}, "reason": "不满足住宅要件时应重点调查旅馆业许可。"},
+        {"id": "unknown", "label": "尚未核验", "score": {}, "unresolved": "按官方住宅要件和图纸核验"}
+      ]
+    },
+    {
+      "id": "rights",
+      "title": "是否已取得房东承诺，并确认管理规约不禁止？",
+      "followup": "取得权利人书面承诺并确认管理规约",
+      "options": [
+        {"id": "yes", "label": "已确认允许", "score": {"minpaku": 2, "ryokan": 1, "tokku": 1}, "reason": "权利关系和管理规约已有基础确认。"},
+        {"id": "no", "label": "明确禁止或房东不同意", "score": {"minpaku": -8, "ryokan": -8, "tokku": -8}, "blocker": "权利关系或管理规约明确禁止，当前不应继续申请或改造。"},
+        {"id": "unknown", "label": "尚未确认", "score": {}, "unresolved": "在投入设计和消防改造前完成书面确认"}
+      ]
+    },
+    {
+      "id": "host",
+      "title": "接待期间是否有家主实际居住并不离开？",
+      "followup": "确认家主居住型或家主不在型",
+      "options": [
+        {"id": "yes", "label": "是，家主实际居住", "score": {"minpaku": 2}, "reason": "可能按家主居住型调查，但须满足自治体对实际生活本拠的要求。"},
+        {"id": "no", "label": "否，无家主常驻", "score": {"minpaku": 0, "ryokan": 1, "tokku": 1}, "reason": "家主不在型通常需要住宅宿泊管理业者并承担更严格运营要求。"},
+        {"id": "unknown", "label": "尚未确定", "score": {}, "unresolved": "明确实际居住、离开时长和管理安排"}
+      ]
+    },
+    {
+      "id": "manager",
+      "title": "家主不在时，能否委托合格住宅宿泊管理业者？",
+      "followup": "确定管理委托和紧急响应体制",
+      "options": [
+        {"id": "yes", "label": "可以委托", "score": {"minpaku": 2}, "reason": "已具备调查家主不在型管理义务的基础。"},
+        {"id": "no", "label": "无法委托", "score": {"minpaku": -5}, "blocker": "如属于法定委托情形但无法委托管理业者，住宅宿泊事业路径存在阻断。"},
+        {"id": "notneeded", "label": "确认属于无需委托情形", "score": {"minpaku": 1}, "reason": "是否无需委托仍须按法定条件和当地解释确认。"},
+        {"id": "unknown", "label": "尚未调查", "score": {}, "unresolved": "查询登记管理业者与响应范围"}
+      ]
+    },
+    {
+      "id": "fire",
+      "title": "是否已携图纸向消防署和主管窗口进行事前咨询？",
+      "followup": "完成消防、建筑和保健所事前咨询",
+      "options": [
+        {"id": "done", "label": "已咨询并取得初步意见", "score": {"minpaku": 2, "ryokan": 2, "tokku": 2}, "reason": "已获得具体物件的初步行政意见，但仍不等于最终合格或许可。"},
+        {"id": "notyet", "label": "尚未咨询", "score": {}, "unresolved": "携地址、用途、面积和图纸预约消防署及主管窗口"},
+        {"id": "blocked", "label": "初步确认改造不可行", "score": {"minpaku": -5, "ryokan": -5, "tokku": -5}, "blocker": "消防或建筑改造初步不可行，应在继续投入前重新评估物件。"}
+      ]
+    }
+  ]
+}

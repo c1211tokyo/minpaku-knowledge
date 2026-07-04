@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mlit-minpaku",
+    "authority": "观光厅",
+    "title": "民泊制度ポータルサイト",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/",
+    "grade": "A",
+    "scope": "住宅宿泊事业全国制度",
+    "lastVerified": "2026-07-04"
+  },
+  {
+    "id": "mlit-regulation",
+    "authority": "观光厅",
+    "title": "住宅宿泊事業法（関連法令・様式集）",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/regulation.html",
+    "grade": "A",
+    "scope": "法律、政令、省令、指南和表格",
+    "lastVerified": "2026-07-04"
+  },
+  {
+    "id": "mhlw-ryokan",
+    "authority": "厚生劳动省",
+    "title": "旅館業法",
+    "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000130600.html",
+    "grade": "A",
+    "scope": "旅馆业法全国制度",
+    "lastVerified": "2026-07-04"
+  },
+  {
+    "id": "tokyo-minpaku",
+    "authority": "东京都产业劳动局",
+    "title": "住宅宿泊事業（民泊）",
+    "url": "https://www.sangyo-rodo.metro.tokyo.lg.jp/application/tourism/minpaku",
+    "grade": "A",
+    "scope": "东京都制度、手册和窗口",
+    "lastVerified": "2026-07-04"
+  },
+  {
+    "id": "tokyo-fire",
+    "authority": "东京消防厅",
+    "title": "新たに民泊を行おうと考えている皆様へ",
+    "url": "https://www.tfd.metro.tokyo.lg.jp/lfe/office_adv/minpaku.html",
+    "grade": "A",
+    "scope": "东京消防咨询与一般要求",
+    "lastVerified": "2026-07-04"
+  },
+  {
+    "id": "municipality-list",
+    "authority": "观光厅",
+    "title": "各自治体の情報・窓口案内",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/municipality.html",
+    "grade": "A",
+    "scope": "全国自治体窗口和条例入口",
+    "lastVerified": "2026-07-04"
+  }
+]
