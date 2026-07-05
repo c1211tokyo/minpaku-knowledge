@@ -736,6 +736,63 @@ svg {
   min-width: 0;
 }
 
+.operations-control-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  align-items: start;
+  gap: 34px;
+  padding-block: 46px 70px;
+}
+
+.operations-control-content .section-heading {
+  margin-bottom: 22px;
+}
+
+.operations-control-content .section-heading h2 {
+  margin-bottom: 6px;
+}
+
+.operations-control-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.operations-control-card {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--navy-800);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.operations-control-card h3 {
+  margin: 0 0 12px;
+  color: var(--navy-950);
+  font-size: 1.05rem;
+}
+
+.operations-control-card p,
+.operations-control-card ul {
+  margin: 0;
+}
+
+.operations-control-card ul {
+  padding-left: 20px;
+}
+
+.operations-control-card li + li {
+  margin-top: 7px;
+}
+
+.operations-evidence {
+  min-width: 0;
+}
+
+.operations-evidence .button {
+  width: 100%;
+}
+
 .content-narrow {
   max-width: 900px;
   margin-inline: auto;
@@ -1397,6 +1454,15 @@ svg {
     display: none;
   }
 
+  .operations-control-layout {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 26px;
+  }
+
+  .operations-control-grid {
+    grid-template-columns: 1fr;
+  }
+
   .directory-layout {
     grid-template-columns: 1fr;
   }
@@ -1526,6 +1592,15 @@ svg {
     padding-top: 28px;
   }
 
+  .operations-control-layout {
+    grid-template-columns: 1fr;
+    padding-block: 34px 52px;
+  }
+
+  .operations-control-grid {
+    grid-template-columns: 1fr;
+  }
+
   .evidence-rail {
     position: static;
     padding-top: 24px;
@@ -1535,6 +1610,10 @@ svg {
   .page-meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .page-meta .meta-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
   .directory-toolbar {
@@ -1625,13 +1704,15 @@ svg {
   }
 
   .article-layout,
-  .tool-layout {
+  .tool-layout,
+  .operations-control-layout {
     display: block;
   }
 
   .tool-panel,
   .checklist-shell,
-  .page-meta {
+  .page-meta,
+  .operations-control-card {
     break-inside: avoid;
     box-shadow: none;
   }
