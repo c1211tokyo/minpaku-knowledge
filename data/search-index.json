@@ -22,10 +22,10 @@
   {"title":"清扫、布草与复检SOP","url":"/operations/cleaning/","summary":"清扫、布草、照片、耗材、破损、维修和复检。","keywords":["清扫","布草","复检","遗失物","外包"]},
   {"title":"事业系垃圾运营SOP","url":"/operations/waste/","summary":"垃圾分类、保管、回收合同、宿泊者说明和异常处理。","keywords":["事业系垃圾","废弃物","回收","垃圾分类"]},
   {"title":"投诉、事故与设备故障SOP","url":"/operations/complaints-incidents/","summary":"24小时响应、到场、紧急机构、遗失物和OTA同步。","keywords":["投诉","事故","噪音","设备故障","遗失物","OTA"]},
-  {"title":"东京23区规则索引","url":"/tokyo/","summary":"主管窗口、限制摘要、核验日期和官方链接。","keywords":["东京23区","条例","保健所","区规则"]},
+  {"title":"东京23区限制对照","url":"/tokyo/","summary":"9个重点区已核验区域、期间、可运营期间、学校周边、管理与近邻规则；其余14区待窗口确认。","keywords":["东京23区","条例","保健所","区规则","新宿","涩谷","丰岛","中野","台东","墨田","中央","千代田","荒川"]},
   {"title":"开业与运营检查清单","url":"/tools/checklists/","summary":"可保存、打印和重置的本机检查清单。","keywords":["检查清单","checklist","开业"]},
   {"title":"参考模板","url":"/resources/templates/","summary":"近邻说明、垃圾提示、噪音提醒和清扫交接结构。","keywords":["模板","近邻说明","垃圾提示","清扫"]},
-  {"title":"官方资料库","url":"/resources/sources/","summary":"国家机关、东京都、消防厅和23区官方入口。","keywords":["官方链接","观光厅","厚生劳动省","东京都"]},
+  {"title":"官方资料库","url":"/resources/sources/","summary":"按机关、地区、制度和主题筛选国家、东京都、税务、运营及重点9区官方资料。","keywords":["官方链接","观光厅","厚生劳动省","国税厅","东京都","税务","保险","运营SOP"]},
   {"title":"日中术语表","url":"/resources/glossary/","summary":"住宅宿泊事业、旅馆业、消防和运营常用术语。","keywords":["术语","日语","中文","名词"]},
   {"title":"内容方法与免责声明","url":"/resources/methodology/","summary":"来源等级、核验日期、过期处理和网站边界。","keywords":["免责声明","来源等级","核验"]},
   {"title":"更新记录","url":"/resources/updates/","summary":"记录法规页面、区级规则和网站功能的变更。","keywords":["更新","变更记录","changelog"]}

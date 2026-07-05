@@ -5,8 +5,20 @@
     "title": "民泊制度ポータルサイト",
     "url": "https://www.mlit.go.jp/kankocho/minpaku/",
     "grade": "A",
-    "scope": "住宅宿泊事业全国制度",
-    "lastVerified": "2026-07-04"
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "门户",
+    "topics": [
+      "制度总览",
+      "届出",
+      "运营"
+    ],
+    "relatedPages": [
+      "/regimes/minpaku/",
+      "/precheck/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
   },
   {
     "id": "mlit-regulation",
@@ -14,8 +26,21 @@
     "title": "住宅宿泊事業法（関連法令・様式集）",
     "url": "https://www.mlit.go.jp/kankocho/minpaku/regulation.html",
     "grade": "A",
-    "scope": "法律、政令、省令、指南和表格",
-    "lastVerified": "2026-07-04"
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "法令资料",
+    "topics": [
+      "法律",
+      "政令",
+      "省令",
+      "表格"
+    ],
+    "relatedPages": [
+      "/regimes/minpaku/",
+      "/resources/methodology/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
   },
   {
     "id": "mhlw-ryokan",
@@ -23,8 +48,20 @@
     "title": "旅館業法",
     "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000130600.html",
     "grade": "A",
-    "scope": "旅馆业法全国制度",
-    "lastVerified": "2026-07-04"
+    "system": "旅馆业",
+    "region": "全国",
+    "documentType": "法令资料",
+    "topics": [
+      "许可",
+      "结构设备",
+      "卫生"
+    ],
+    "relatedPages": [
+      "/regimes/ryokan/",
+      "/flows/ryokan/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
   },
   {
     "id": "tokyo-minpaku",
@@ -32,8 +69,20 @@
     "title": "住宅宿泊事業（民泊）",
     "url": "https://www.sangyo-rodo.metro.tokyo.lg.jp/application/tourism/minpaku",
     "grade": "A",
-    "scope": "东京都制度、手册和窗口",
-    "lastVerified": "2026-07-04"
+    "system": "住宅宿泊事业",
+    "region": "东京都",
+    "documentType": "门户",
+    "topics": [
+      "东京都手册",
+      "手续",
+      "多语言"
+    ],
+    "relatedPages": [
+      "/regimes/minpaku/",
+      "/tokyo/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
   },
   {
     "id": "tokyo-fire",
@@ -41,8 +90,21 @@
     "title": "新たに民泊を行おうと考えている皆様へ",
     "url": "https://www.tfd.metro.tokyo.lg.jp/lfe/office_adv/minpaku.html",
     "grade": "A",
-    "scope": "东京消防咨询与一般要求",
-    "lastVerified": "2026-07-04"
+    "system": "共通",
+    "region": "东京都",
+    "documentType": "指南",
+    "topics": [
+      "消防",
+      "避难",
+      "事前咨询"
+    ],
+    "relatedPages": [
+      "/precheck/fire/",
+      "/flows/minpaku/",
+      "/flows/ryokan/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
   },
   {
     "id": "municipality-list",
@@ -50,7 +112,447 @@
     "title": "各自治体の情報・窓口案内",
     "url": "https://www.mlit.go.jp/kankocho/minpaku/municipality.html",
     "grade": "A",
-    "scope": "全国自治体窗口和条例入口",
-    "lastVerified": "2026-07-04"
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "窗口索引",
+    "topics": [
+      "自治体",
+      "条例",
+      "窗口"
+    ],
+    "relatedPages": [
+      "/tokyo/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "mlit-host-duty-1",
+    "authority": "观光厅",
+    "title": "住宅宿泊事業者の業務（宿泊者の衛生・安全）",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/business/host/responsibility01.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "运营指南",
+    "topics": [
+      "宿泊者名簿",
+      "卫生",
+      "安全"
+    ],
+    "relatedPages": [
+      "/operations/guest-register/",
+      "/operations/cleaning/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "mlit-host-duty-2",
+    "authority": "观光厅",
+    "title": "住宅宿泊事業者の業務（外国人案内・周边影响防止）",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/business/host/responsibility02.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "运营指南",
+    "topics": [
+      "外国宿泊者",
+      "噪音",
+      "垃圾",
+      "投诉"
+    ],
+    "relatedPages": [
+      "/operations/guest-register/",
+      "/operations/complaints-incidents/",
+      "/operations/waste/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "mlit-periodic-report",
+    "authority": "观光厅",
+    "title": "住宅宿泊事業の定期報告",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/business/system/regular_report.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "手续页面",
+    "topics": [
+      "定期报告",
+      "宿泊日数",
+      "宿泊者数"
+    ],
+    "relatedPages": [
+      "/operations/periodic-report/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "mlit-host-attention",
+    "authority": "观光厅",
+    "title": "住宅宿泊事業を営む際の注意事项",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/business/host/attention.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "运营指南",
+    "topics": [
+      "保险",
+      "消防",
+      "责任",
+      "投诉"
+    ],
+    "relatedPages": [
+      "/operations/",
+      "/precheck/tax-insurance/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "mlit-management-entrust",
+    "authority": "观光厅",
+    "title": "住宅宿泊管理業務の委託",
+    "url": "https://www.mlit.go.jp/kankocho/minpaku/business/host/entrust.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "全国",
+    "documentType": "运营指南",
+    "topics": [
+      "管理业者",
+      "委托",
+      "家主不在型"
+    ],
+    "relatedPages": [
+      "/operations/",
+      "/precheck/access/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "nta-consumption-tax",
+    "authority": "国税厅",
+    "title": "消費税の納税義務者",
+    "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6501.htm",
+    "grade": "A",
+    "system": "税务・保险",
+    "region": "全国",
+    "documentType": "税务说明",
+    "topics": [
+      "消费税",
+      "纳税义务",
+      "基准期间"
+    ],
+    "relatedPages": [
+      "/precheck/tax-insurance/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "nta-invoice",
+    "authority": "国税厅",
+    "title": "インボイス制度特设页面",
+    "url": "https://www.nta.go.jp/publication/pamph/koho/campaign/r4/Nov/06.htm",
+    "grade": "A",
+    "system": "税务・保险",
+    "region": "全国",
+    "documentType": "税务说明",
+    "topics": [
+      "インボイス",
+      "适格请求书",
+      "消费税"
+    ],
+    "relatedPages": [
+      "/precheck/tax-insurance/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "nta-depreciation",
+    "authority": "国税厅",
+    "title": "減価償却のあらまし",
+    "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2107.htm",
+    "grade": "A",
+    "system": "税务・保险",
+    "region": "全国",
+    "documentType": "税务说明",
+    "topics": [
+      "固定资产",
+      "装修设备",
+      "减价償却"
+    ],
+    "relatedPages": [
+      "/precheck/tax-insurance/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "tokyo-lodging-tax",
+    "authority": "东京都主税局",
+    "title": "宿泊税",
+    "url": "https://www.tax.metro.tokyo.lg.jp/kazei/leisure/shuk/%EF%BC%92",
+    "grade": "A",
+    "system": "税务・保险",
+    "region": "东京都",
+    "documentType": "税务说明",
+    "topics": [
+      "宿泊税",
+      "2027改正",
+      "申告"
+    ],
+    "relatedPages": [
+      "/precheck/tax-insurance/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "transition"
+  },
+  {
+    "id": "shinjuku-rule",
+    "authority": "新宿区",
+    "title": "住宅宿泊事業と新宿区のルール",
+    "url": "https://www.city.shinjuku.lg.jp/kenkou/eisei03_002086.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "新宿区",
+    "documentType": "区规则",
+    "topics": [
+      "区域限制",
+      "期间限制",
+      "近邻",
+      "垃圾"
+    ],
+    "relatedPages": [
+      "/tokyo/shinjuku/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "shibuya-hub",
+    "authority": "渋谷区",
+    "title": "住宅宿泊事業（民泊）について",
+    "url": "https://www.city.shibuya.tokyo.jp/kenko/eisei/kankyo/minpaku.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "渋谷区",
+    "documentType": "区规则",
+    "topics": [
+      "2026改正",
+      "届出",
+      "管理"
+    ],
+    "relatedPages": [
+      "/tokyo/shibuya/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "transition"
+  },
+  {
+    "id": "shibuya-reform",
+    "authority": "渋谷区",
+    "title": "2026年住宅宿泊事業条例改正概要",
+    "url": "https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/d06ba0466e004a5ca37f230da4c46e12/minpaku_kaisei_gaiyo.pdf",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "渋谷区",
+    "documentType": "规则摘要",
+    "topics": [
+      "限制区域",
+      "限制期间",
+      "60日前周知"
+    ],
+    "relatedPages": [
+      "/tokyo/shibuya/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "transition"
+  },
+  {
+    "id": "toshima-hub",
+    "authority": "豊島区",
+    "title": "事業者向け：住宅宿泊事業法について",
+    "url": "https://www.city.toshima.lg.jp/214/kurashi/ese/kankyoese/minpaku.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "豊島区",
+    "documentType": "区规则",
+    "topics": [
+      "届出",
+      "30分钟响应",
+      "近邻"
+    ],
+    "relatedPages": [
+      "/tokyo/toshima/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "transition"
+  },
+  {
+    "id": "toshima-reform",
+    "authority": "豊島区",
+    "title": "住宅宿泊事業条例改正概要",
+    "url": "https://www.city.toshima.lg.jp/documents/53829/gaiyou1.pdf",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "豊島区",
+    "documentType": "规则摘要",
+    "topics": [
+      "2026-12-16",
+      "120日",
+      "新设限制"
+    ],
+    "relatedPages": [
+      "/tokyo/toshima/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "transition"
+  },
+  {
+    "id": "nakano-rule",
+    "authority": "中野区",
+    "title": "住宅宿泊事業について（中野区の民泊ルール）",
+    "url": "https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/pet-eisei/kankyoueisei/jyutakusyukuhaku.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "中野区",
+    "documentType": "区规则",
+    "topics": [
+      "用途地域",
+      "星期限制",
+      "管理业者"
+    ],
+    "relatedPages": [
+      "/tokyo/nakano/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "taito-rule",
+    "authority": "台東区",
+    "title": "住宅宿泊事業（民泊）における台東区のルール",
+    "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "台東区",
+    "documentType": "区规则",
+    "topics": [
+      "常驻",
+      "期间限制",
+      "学校周边",
+      "30分钟"
+    ],
+    "relatedPages": [
+      "/tokyo/taito/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "sumida-procedure",
+    "authority": "墨田区",
+    "title": "住宅宿泊事業（民泊）に関する手続き",
+    "url": "https://www.city.sumida.lg.jp/kenko_fukushi/eisei/juutaku_syukuhaku/ji/minnpakujigyou.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "墨田区",
+    "documentType": "区规则",
+    "topics": [
+      "2026新规",
+      "届出",
+      "近邻"
+    ],
+    "relatedPages": [
+      "/tokyo/sumida/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "sumida-reform",
+    "authority": "墨田区",
+    "title": "2026年新条例施行说明",
+    "url": "https://www.city.sumida.lg.jp/kuseijoho/kouhoukatudou/houdou/wadai/r8/080401_1.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "墨田区",
+    "documentType": "规则摘要",
+    "topics": [
+      "全区限制",
+      "常驻例外",
+      "2026-04-01"
+    ],
+    "relatedPages": [
+      "/tokyo/sumida/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "chuo-rule",
+    "authority": "中央区",
+    "title": "住宅宿泊事業に関する中央区のルール",
+    "url": "https://www.city.chuo.lg.jp/a0030/kenkouiryou/eisei/seikatsueisei/minpaku/jyutakujyukuhakujigyojyorei.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "中央区",
+    "documentType": "区规则",
+    "topics": [
+      "全区限制",
+      "周末",
+      "近邻"
+    ],
+    "relatedPages": [
+      "/tokyo/chuo/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "current"
+  },
+  {
+    "id": "chiyoda-rule",
+    "authority": "千代田区",
+    "title": "住宅宿泊事業の実施に関する条例・ガイドライン",
+    "url": "https://www.city.chiyoda.lg.jp/koho/kurashi/jutakushukuhakujigyo/jorei.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "千代田区",
+    "documentType": "区规则",
+    "topics": [
+      "文教地区",
+      "学校100米",
+      "管理常驻"
+    ],
+    "relatedPages": [
+      "/tokyo/chiyoda/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "review-soon"
+  },
+  {
+    "id": "arakawa-rule",
+    "authority": "荒川区",
+    "title": "住宅宿泊事業に関する手続き",
+    "url": "https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/kekka.html",
+    "grade": "A",
+    "system": "住宅宿泊事业",
+    "region": "荒川区",
+    "documentType": "区规则",
+    "topics": [
+      "期间限制",
+      "近邻",
+      "届出"
+    ],
+    "relatedPages": [
+      "/tokyo/arakawa/"
+    ],
+    "verifiedAt": "2026-07-05",
+    "status": "review-soon"
   }
 ]

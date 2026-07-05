@@ -81,6 +81,8 @@ def external_urls(html_files: list[Path]) -> set[str]:
         urls.add(source["url"])
     for ward in load_json(ROOT / "data" / "wards.json"):
         urls.add(ward["officialUrl"])
+        for source in ward.get("minpakuRestriction", {}).get("officialSources", []):
+            urls.add(source["url"])
     return urls
 
 
@@ -255,6 +257,42 @@ def main() -> int:
         if restriction.get("effectiveFrom") is not None:
             date.fromisoformat(restriction["effectiveFrom"])
 
+    sources = load_json(ROOT / "data" / "sources.json")
+    source_ids: set[str] = set()
+    source_required = (
+        "id", "authority", "title", "url", "grade", "system", "region",
+        "documentType", "topics", "relatedPages", "verifiedAt", "status",
+    )
+    for source in sources:
+        for field in source_required:
+            if field not in source or source[field] in ("", None):
+                errors.append(f"Source {source.get('id', '<unknown>')} missing {field}")
+        if source.get("id") in source_ids:
+            errors.append(f"Duplicate source id: {source.get('id')}")
+        source_ids.add(source.get("id"))
+        if source.get("grade") != "A":
+            errors.append(f"Source {source.get('id')} must be grade A")
+        if source.get("status") not in {"current", "transition", "review-soon"}:
+            errors.append(f"Source {source.get('id')} has invalid status")
+        if not isinstance(source.get("topics"), list) or not source.get("topics"):
+            errors.append(f"Source {source.get('id')} missing topics")
+        if not isinstance(source.get("relatedPages"), list) or not source.get("relatedPages"):
+            errors.append(f"Source {source.get('id')} missing relatedPages")
+        else:
+            for related in source["relatedPages"]:
+                target = resolve_internal(ROOT / "index.html", related)
+                if target is None or not target.exists():
+                    errors.append(f"Source {source.get('id')} related page missing: {related}")
+        if not source.get("url", "").startswith("https://"):
+            errors.append(f"Source {source.get('id')} URL must use HTTPS")
+        if source.get("verifiedAt"):
+            date.fromisoformat(source["verifiedAt"])
+
+    sources_page = (ROOT / "resources" / "sources" / "index.html").read_text(encoding="utf-8")
+    for marker in ("data-source-authority", "data-source-region", "data-source-system", "data-source-topic", "data-source-list"):
+        if marker not in sources_page:
+            errors.append(f"Official sources page missing filter {marker}")
+
     search_entries = load_json(ROOT / "data" / "search-index.json")
     seen_urls: set[str] = set()
     for entry in search_entries:
@@ -300,7 +338,7 @@ def main() -> int:
                 warnings.append(f"External link inconclusive ({detail}): {url}")
             time.sleep(0.15)
 
-    print(f"Checked {len(html_files)} HTML files, {len(wards)} wards, {len(search_entries)} search entries.")
+    print(f"Checked {len(html_files)} HTML files, {len(wards)} wards, {len(search_entries)} search entries, {len(sources)} sources.")
     for warning in warnings:
         print(f"WARNING: {warning}")
     for error in errors:

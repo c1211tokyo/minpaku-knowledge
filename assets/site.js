@@ -119,7 +119,10 @@
       "簡易宿所": "简易宿所 旅馆业 旅館業",
       "消防": "火灾 火災 自動火災報知設備 避难 避難",
       "垃圾": "ごみ 废弃物 廃棄物 事业系 事業系",
-      "名簿": "宿泊者名簿 本人确认 本人確認"
+      "名簿": "宿泊者名簿 本人确认 本人確認",
+      "涩谷": "渋谷",
+      "丰岛": "豊島",
+      "台东": "台東"
     };
     var input = String(value || "").toLowerCase().trim();
     Object.keys(synonyms).forEach(function (key) {
@@ -251,7 +254,8 @@
     var filter = "all";
 
     function filteredWards() {
-      var query = normalizedText(search ? search.value : "");
+      var query = String(search ? search.value : "").toLowerCase().trim().replace(/[\s\u3000]+/g, " ");
+      var wardAliases = { "涩谷": "渋谷", "丰岛": "豊島", "台东": "台東" };
       return wards.filter(function (ward) {
         var haystack = normalizedText([
           ward.name, ward.department, ward.restrictionSummary, ward.status,
@@ -265,7 +269,8 @@
           ward.tags.join(" ")
         ].join(" "));
         var matchesText = !query || query.split(" ").every(function (token) {
-          return haystack.indexOf(token) !== -1;
+          return haystack.indexOf(token) !== -1 ||
+            (wardAliases[token] && haystack.indexOf(wardAliases[token].toLowerCase()) !== -1);
         });
         var rule = ward.minpakuRestriction;
         var matchesFilter = filter === "all" ||
@@ -419,6 +424,91 @@
     });
   }
 
+  function initSourceLibrary() {
+    var root = document.querySelector("[data-source-list]");
+    if (!root) return;
+    var count = document.querySelector("[data-source-count]");
+    var authority = document.querySelector("[data-source-authority]");
+    var region = document.querySelector("[data-source-region]");
+    var system = document.querySelector("[data-source-system]");
+    var topic = document.querySelector("[data-source-topic]");
+    var sources = [];
+    var statusLabels = { current: "当前", transition: "过渡期", "review-soon": "需优先复核" };
+
+    function fillSelect(select, values) {
+      if (!select) return;
+      var first = select.options[0];
+      select.innerHTML = "";
+      select.appendChild(first);
+      values.sort(function (a, b) { return a.localeCompare(b, "zh-CN"); }).forEach(function (value) {
+        var option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      });
+    }
+
+    function unique(field) {
+      return Array.from(new Set(sources.map(function (source) { return source[field]; })));
+    }
+
+    function uniqueTopics() {
+      var values = [];
+      sources.forEach(function (source) { values = values.concat(source.topics); });
+      return Array.from(new Set(values));
+    }
+
+    function renderCard(source) {
+      var topics = source.topics.map(function (item) {
+        return '<span class="source-topic">' + escapeHtml(item) + "</span>";
+      }).join("");
+      var related = source.relatedPages.map(function (url) {
+        return '<a href="' + escapeHtml(url) + '">' + escapeHtml(url) + "</a>";
+      }).join("");
+      return '<article class="source-card">' +
+        '<div class="source-card__meta"><span>A级</span><span>' + escapeHtml(source.authority) + "</span><span>" + escapeHtml(statusLabels[source.status] || source.status) + "</span></div>" +
+        "<h2>" + escapeHtml(source.title) + "</h2>" +
+        '<p><strong>制度：</strong>' + escapeHtml(source.system) + "　<strong>地区：</strong>" + escapeHtml(source.region) + "</p>" +
+        '<p><strong>文件：</strong>' + escapeHtml(source.documentType) + "　<strong>核验：</strong>" + escapeHtml(source.verifiedAt) + "</p>" +
+        '<div class="source-topics" aria-label="主题">' + topics + "</div>" +
+        '<a class="source-primary-link" href="' + escapeHtml(source.url) + '"' + externalAttrs(source.url) + ">打开官方原文 ↗</a>" +
+        '<div class="source-related"><strong>相关页面</strong>' + related + "</div>" +
+      "</article>";
+    }
+
+    function render() {
+      var values = {
+        authority: authority ? authority.value : "",
+        region: region ? region.value : "",
+        system: system ? system.value : "",
+        topic: topic ? topic.value : ""
+      };
+      var filtered = sources.filter(function (source) {
+        return (!values.authority || source.authority === values.authority) &&
+          (!values.region || source.region === values.region) &&
+          (!values.system || source.system === values.system) &&
+          (!values.topic || source.topics.indexOf(values.topic) !== -1);
+      });
+      count.textContent = String(filtered.length);
+      root.innerHTML = filtered.length ? filtered.map(renderCard).join("") : '<div class="notice notice--warning">没有符合当前筛选的官方资料。</div>';
+      initExternalLinks();
+    }
+
+    loadJson("/data/sources.json").then(function (data) {
+      sources = data;
+      fillSelect(authority, unique("authority"));
+      fillSelect(region, unique("region"));
+      fillSelect(system, unique("system"));
+      fillSelect(topic, uniqueTopics());
+      [authority, region, system, topic].filter(Boolean).forEach(function (select) {
+        select.addEventListener("change", render);
+      });
+      render();
+    }).catch(function () {
+      root.innerHTML = '<div class="notice notice--risk">官方资料暂时无法读取，请稍后重试。</div>';
+    });
+  }
+
   function initSite() {
     if (siteInitialized) return;
     siteInitialized = true;
@@ -430,6 +520,7 @@
     initExternalLinks();
     initPrintButtons();
     initChecklists();
+    initSourceLibrary();
   }
 
   function digestAccessCode(value) {
