@@ -3,6 +3,22 @@
 
   var BASE = "";
   var DATA_CACHE = {};
+  var ACCESS_SESSION_KEY = "mk-access-granted";
+  var ACCESS_DIGEST = "03f16268eaf54cd63d9779c213f043222bebaf7a55395ae8211ebfeb3c2cf782";
+  var siteInitialized = false;
+
+  function hasAccess() {
+    try {
+      return sessionStorage.getItem(ACCESS_SESSION_KEY) === "1";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  if (hasAccess()) {
+    document.documentElement.classList.remove("access-pending");
+    document.documentElement.classList.add("access-granted");
+  }
 
   function pathIsActive(href) {
     var current = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -38,7 +54,7 @@
     var host = document.querySelector("[data-site-header]");
     if (!host) return;
     var nav = [
-      ["/tools/decision/", "开始判断", "/tools/decision/"],
+      ["/precheck/", "开业前调查", "/precheck/"],
       ["/regimes/compare/", "制度指南", "/regimes/"],
       ["/tokyo/", "东京23区", "/tokyo/"],
       ["/operations/", "运营规范", "/operations/"],
@@ -316,123 +332,6 @@
     });
   }
 
-  function initDecisionTool() {
-    var root = document.querySelector("[data-decision-tool]");
-    if (!root) return;
-    var state = { index: 0, answers: {} };
-    try {
-      var saved = JSON.parse(localStorage.getItem("mk-decision") || "null");
-      if (saved && saved.answers) state = saved;
-    } catch (error) {
-      state = { index: 0, answers: {} };
-    }
-
-    Promise.all([
-      loadJson("/data/decision-rules.json")
-    ]).then(function (payload) {
-      var questions = payload[0].questions;
-      state.index = Math.min(Math.max(Number(state.index) || 0, 0), questions.length - 1);
-
-      function calculate() {
-        var score = { minpaku: 0, ryokan: 0, tokku: 0 };
-        var reasons = [];
-        var blockers = [];
-        var unresolved = [];
-        questions.forEach(function (question) {
-          var answerId = state.answers[question.id];
-          if (!answerId) {
-            unresolved.push(question.followup);
-            return;
-          }
-          var option = question.options.find(function (item) { return item.id === answerId; });
-          if (!option) return;
-          Object.keys(option.score || {}).forEach(function (key) {
-            score[key] += option.score[key];
-          });
-          if (option.reason) reasons.push(option.reason);
-          if (option.blocker) blockers.push(option.blocker);
-          if (option.unresolved) unresolved.push(option.unresolved);
-        });
-        var labels = { minpaku: "住宅宿泊事业（民泊）", ryokan: "旅馆业许可", tokku: "大田区特区民泊" };
-        var sorted = Object.keys(score).sort(function (a, b) { return score[b] - score[a]; });
-        var inclination = blockers.length ? "先解决阻断项并进行行政咨询" : labels[sorted[0]];
-        if (Object.keys(state.answers).length < 3) inclination = "资料不足，暂不判断";
-        return {
-          inclination: inclination,
-          reasons: reasons.slice(0, 5),
-          blockers: blockers,
-          unresolved: Array.from(new Set(unresolved)).slice(0, 6)
-        };
-      }
-
-      function persist() {
-        localStorage.setItem("mk-decision", JSON.stringify(state));
-      }
-
-      function renderResult() {
-        var result = calculate();
-        root.querySelector("[data-result-title]").textContent = result.inclination;
-        root.querySelector("[data-result-reasons]").innerHTML = result.reasons.length
-          ? result.reasons.map(function (item) { return "<li>" + escapeHtml(item) + "</li>"; }).join("")
-          : "<li>请继续回答问题。</li>";
-        root.querySelector("[data-result-blockers]").innerHTML = result.blockers.length
-          ? result.blockers.map(function (item) { return "<li>" + escapeHtml(item) + "</li>"; }).join("")
-          : "<li>目前未识别到确定阻断项；仍须由主管机关确认。</li>";
-        root.querySelector("[data-result-unresolved]").innerHTML = result.unresolved.length
-          ? result.unresolved.map(function (item) { return "<li>" + escapeHtml(item) + "</li>"; }).join("")
-          : "<li>基础问题已回答，仍需核验具体地址、图纸和主管窗口要求。</li>";
-      }
-
-      function renderQuestion() {
-        var question = questions[state.index];
-        root.querySelector("[data-question-count]").textContent = (state.index + 1) + " / " + questions.length;
-        root.querySelector("[data-question-title]").textContent = question.title;
-        root.querySelector("[data-options]").innerHTML = question.options.map(function (option) {
-          var checked = state.answers[question.id] === option.id ? " checked" : "";
-          return '<label class="option-label"><input type="radio" name="decision-option" value="' +
-            escapeHtml(option.id) + '"' + checked + "><span>" + escapeHtml(option.label) + "</span></label>";
-        }).join("");
-        root.querySelectorAll("[data-progress] span").forEach(function (dot, index) {
-          dot.className = "progress-dot" + (index < state.index ? " is-complete" : index === state.index ? " is-current" : "");
-        });
-        root.querySelector("[data-prev]").disabled = state.index === 0;
-        root.querySelector("[data-next]").textContent = state.index === questions.length - 1 ? "查看结论" : "继续";
-        renderResult();
-      }
-
-      root.addEventListener("change", function (event) {
-        if (event.target.name !== "decision-option") return;
-        state.answers[questions[state.index].id] = event.target.value;
-        persist();
-        renderResult();
-      });
-      root.querySelector("[data-prev]").addEventListener("click", function () {
-        state.index = Math.max(0, state.index - 1);
-        persist();
-        renderQuestion();
-      });
-      root.querySelector("[data-next]").addEventListener("click", function () {
-        if (!state.answers[questions[state.index].id]) {
-          root.querySelector("[data-question-error]").hidden = false;
-          return;
-        }
-        root.querySelector("[data-question-error]").hidden = true;
-        state.index = Math.min(questions.length - 1, state.index + 1);
-        persist();
-        renderQuestion();
-      });
-      root.querySelector("[data-reset-decision]").addEventListener("click", function () {
-        if (!window.confirm("确定清除当前浏览器保存的判断进度吗？")) return;
-        state = { index: 0, answers: {} };
-        localStorage.removeItem("mk-decision");
-        renderQuestion();
-      });
-      renderQuestion();
-    }).catch(function () {
-      root.innerHTML = '<div class="notice notice--risk">判断器数据暂时无法读取。请使用制度比较页和官方窗口进行调查。</div>';
-    });
-  }
-
   function initChecklists() {
     var root = document.querySelector("[data-checklists]");
     if (!root) return;
@@ -494,7 +393,9 @@
     });
   }
 
-  function init() {
+  function initSite() {
+    if (siteInitialized) return;
+    siteInitialized = true;
     renderHeader();
     renderFooter();
     initSearch();
@@ -502,8 +403,119 @@
     initArticleSpy();
     initExternalLinks();
     initPrintButtons();
-    initDecisionTool();
     initChecklists();
+  }
+
+  function digestAccessCode(value) {
+    if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+      return Promise.reject(new Error("unsupported"));
+    }
+    return window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)).then(function (buffer) {
+      return Array.prototype.map.call(new Uint8Array(buffer), function (byte) {
+        return byte.toString(16).padStart(2, "0");
+      }).join("");
+    });
+  }
+
+  function setProtectedContentLocked(locked) {
+    Array.prototype.forEach.call(document.body.children, function (element) {
+      if (element.classList.contains("access-gate") || element.classList.contains("access-noscript")) return;
+      if (locked) {
+        element.setAttribute("aria-hidden", "true");
+        element.inert = true;
+      } else {
+        element.removeAttribute("aria-hidden");
+        element.inert = false;
+      }
+    });
+  }
+
+  function renderAccessGate() {
+    document.documentElement.classList.remove("access-pending");
+    document.documentElement.classList.add("access-locked");
+    document.body.classList.add("no-scroll");
+    setProtectedContentLocked(true);
+
+    var gate = document.createElement("div");
+    gate.className = "access-gate";
+    gate.setAttribute("role", "dialog");
+    gate.setAttribute("aria-modal", "true");
+    gate.setAttribute("aria-labelledby", "access-gate-title");
+    gate.innerHTML = '<div class="access-gate__panel">' +
+      '<p class="access-gate__brand">Minpaku Knowledge</p>' +
+      '<h1 id="access-gate-title">受控资料库</h1>' +
+      '<p>请输入访问口令后进入日本民宿・旅馆合规知识库。</p>' +
+      '<form class="access-gate__form">' +
+        '<label for="access-code">访问口令</label>' +
+        '<div class="access-gate__input-row">' +
+          '<input id="access-code" name="access-code" type="password" autocomplete="off" required>' +
+          '<button class="button button--secondary" type="button" data-access-toggle aria-pressed="false">显示</button>' +
+        '</div>' +
+        '<p class="access-gate__error" data-access-error role="alert" aria-live="polite"></p>' +
+        '<button class="button access-gate__submit" type="submit">进入资料库</button>' +
+      '</form>' +
+      '<div class="notice notice--warning"><strong>安全说明：</strong>此入口仅用于减少随手访问，不构成加密或真实访问控制。请勿在本站存放客户资料、合同、账号或其他机密信息。</div>' +
+    '</div>';
+    document.body.prepend(gate);
+
+    var form = gate.querySelector("form");
+    var input = gate.querySelector("input");
+    var toggle = gate.querySelector("[data-access-toggle]");
+    var error = gate.querySelector("[data-access-error]");
+    var submit = gate.querySelector("[type=submit]");
+
+    toggle.addEventListener("click", function () {
+      var show = input.type === "password";
+      input.type = show ? "text" : "password";
+      toggle.textContent = show ? "隐藏" : "显示";
+      toggle.setAttribute("aria-pressed", String(show));
+      input.focus();
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      error.textContent = "";
+      submit.disabled = true;
+      digestAccessCode(input.value).then(function (digest) {
+        if (digest !== ACCESS_DIGEST) {
+          error.textContent = "访问口令不正确，请重新输入。";
+          input.value = "";
+          input.focus();
+          return;
+        }
+        try {
+          sessionStorage.setItem(ACCESS_SESSION_KEY, "1");
+        } catch (storageError) {
+          error.textContent = "当前浏览器无法保存会话状态，请检查隐私设置。";
+          return;
+        }
+        gate.remove();
+        document.documentElement.classList.remove("access-locked");
+        document.documentElement.classList.add("access-granted");
+        document.body.classList.remove("no-scroll");
+        setProtectedContentLocked(false);
+        initSite();
+        var main = document.getElementById("main-content");
+        if (main) {
+          main.setAttribute("tabindex", "-1");
+          main.focus();
+        }
+      }).catch(function () {
+        error.textContent = "当前浏览器无法完成本地验证，请使用最新版浏览器。";
+      }).finally(function () {
+        submit.disabled = false;
+      });
+    });
+
+    input.focus();
+  }
+
+  function init() {
+    if (hasAccess()) {
+      initSite();
+    } else {
+      renderAccessGate();
+    }
   }
 
   if (document.readyState === "loading") {

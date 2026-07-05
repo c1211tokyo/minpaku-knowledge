@@ -17,6 +17,17 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE_DOMAIN = "minpakuk.1211.world"
+SHARED_NAV_PATHS = {
+    "/precheck/",
+    "/regimes/compare/",
+    "/tokyo/",
+    "/operations/",
+    "/tools/checklists/",
+    "/resources/sources/",
+    "/resources/methodology/",
+    "/resources/updates/",
+    "/resources/glossary/",
+}
 
 
 class LinkParser(HTMLParser):
@@ -103,6 +114,7 @@ def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
     html_files = sorted(ROOT.rglob("*.html"))
+    inbound_targets: set[Path] = {ROOT / "index.html"}
     if not html_files:
         errors.append("No HTML files found")
 
@@ -116,6 +128,14 @@ def main() -> int:
                 errors.append(f"{page.relative_to(ROOT)} missing canonical URL")
             if "<h1" not in text:
                 errors.append(f"{page.relative_to(ROOT)} missing H1")
+        for marker in (
+            'class="access-pending"',
+            '<meta name="robots"',
+            '<script src="/assets/site.js"></script>',
+            'class="access-noscript"',
+        ):
+            if marker not in text:
+                errors.append(f"{page.relative_to(ROOT)} missing access marker {marker}")
         parser_obj = LinkParser()
         parser_obj.feed(text)
         for href in parser_obj.links:
@@ -124,6 +144,24 @@ def main() -> int:
                 errors.append(
                     f"{page.relative_to(ROOT)} -> missing {target.relative_to(ROOT) if target.is_relative_to(ROOT) else target}"
                 )
+            elif target is not None:
+                inbound_targets.add(target)
+
+    for href in SHARED_NAV_PATHS:
+        target = resolve_internal(ROOT / "index.html", href)
+        if target is not None:
+            inbound_targets.add(target)
+
+    for page in html_files:
+        if page.name == "404.html" or page == ROOT / "index.html":
+            continue
+        if page not in inbound_targets:
+            errors.append(f"Orphan page without HTML or shared-navigation entry: {page.relative_to(ROOT)}")
+
+    if (ROOT / "tools" / "decision" / "index.html").exists():
+        errors.append("Retired decision tool page still exists")
+    if (ROOT / "data" / "decision-rules.json").exists():
+        errors.append("Retired decision rules still exist")
 
     wards = load_json(ROOT / "data" / "wards.json")
     if len(wards) != 23:

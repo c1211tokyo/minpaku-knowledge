@@ -46,6 +46,103 @@ body.no-scroll {
   overflow: hidden;
 }
 
+html.access-pending body > * {
+  display: none !important;
+}
+
+html.access-pending body > .access-noscript {
+  display: grid !important;
+}
+
+html.access-locked body > *:not(.access-gate) {
+  display: none !important;
+}
+
+.access-noscript,
+.access-gate {
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+  background: var(--surface);
+}
+
+.access-noscript {
+  display: none;
+}
+
+.access-noscript__panel,
+.access-gate__panel {
+  width: min(100%, 560px);
+  padding: clamp(28px, 5vw, 48px);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--navy-950);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.access-gate {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: grid;
+  overflow-y: auto;
+}
+
+.access-gate__brand {
+  margin: 0 0 8px;
+  color: var(--navy-800);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.access-gate h1,
+.access-noscript h1 {
+  margin: 0;
+  color: var(--navy-950);
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+}
+
+.access-gate__form {
+  margin-top: 28px;
+}
+
+.access-gate__form > label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--navy-950);
+  font-weight: 750;
+}
+
+.access-gate__input-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.access-gate__input-row input {
+  min-width: 0;
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.access-gate__error {
+  min-height: 1.7em;
+  margin: 8px 0;
+  color: var(--red-700);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.access-gate__submit {
+  width: 100%;
+}
+
 a {
   color: var(--navy-800);
   text-decoration-thickness: 1px;
@@ -379,6 +476,25 @@ svg {
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+.quick-grid--five {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.quick-grid--five .quick-link {
+  min-height: 220px;
+  padding: 24px 20px;
+}
+
+.quick-grid--five .quick-link::after {
+  top: 24px;
+  right: 18px;
+}
+
+.quick-grid--five .quick-link h3 {
+  margin-right: 28px;
+  font-size: 19px;
 }
 
 .regime-link,
@@ -1178,6 +1294,19 @@ svg {
     grid-template-columns: 1fr;
   }
 
+  .quick-grid--five {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-grid--five .quick-link:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .quick-grid--five .quick-link:last-child {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--border);
+  }
+
   .ward-detail {
     position: static;
   }
@@ -1240,6 +1369,11 @@ svg {
   .home-lower,
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .quick-grid--five .quick-link:last-child {
+    grid-column: auto;
+    border-top: 0;
   }
 
   .regime-link,
