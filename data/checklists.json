@@ -65,5 +65,25 @@
       {"id": "tax-accounting", "label": "确认税务处理并建立凭证记录", "note": "由税务机关或税理士确认主体、所得、消费税、宿泊税、资产和申报周期。"},
       {"id": "insurance-business", "label": "确认保险明确覆盖住宿营业用途", "note": "向保险公司书面确认火灾、第三者责任、停业、外包和主要除外责任。"}
     ]
+  },
+  {
+    "title": "渠道、收益与月度复盘",
+    "types": ["operations"],
+    "items": [
+      {"id": "channel-sync", "label": "复核PMS与各渠道房态、价格和政策", "note": "保存实际展示和异常同步记录。"},
+      {"id": "channel-listing", "label": "核对刊登与许可、人数及设施事实一致", "note": "不得以营销文案扩大许可或消防条件。"},
+      {"id": "revenue-monthly", "label": "完成ADR、入住率、RevPAR和净贡献复盘", "note": "住宅宿泊事业使用真正可售日作为分母。"},
+      {"id": "refund-evidence", "label": "抽查取消、退款和申诉证据链", "note": "包含订单适用政策、沟通、决定和结算。"}
+    ]
+  },
+  {
+    "title": "培训、权限与持续复核",
+    "types": ["operations", "minpaku", "ryokan"],
+    "items": [
+      {"id": "training-role", "label": "完成岗位课程和情景测试", "note": "培训完成不自动授予门锁、退款或平台权限。"},
+      {"id": "access-review", "label": "复核门锁、平台、证件和供应商权限", "note": "离职、换包和岗位变化时立即回收。"},
+      {"id": "rule-review", "label": "检查法规、区规则和平台复核期限", "note": "过渡期和近期变更优先。"},
+      {"id": "case-review", "label": "将重大异常转为匿名复盘条目", "note": "不得录入客人、员工或具体地址等敏感资料。"}
+    ]
   }
 ]

@@ -58,6 +58,7 @@
       ["/regimes/compare/", "制度指南", "/regimes/"],
       ["/tokyo/", "东京23区", "/tokyo/"],
       ["/operations/", "运营规范", "/operations/"],
+      ["/industry/", "行业知识", "/industry/"],
       ["/tools/checklists/", "工具", "/tools/"],
       ["/resources/sources/", "官方资料", "/resources/"]
     ];
@@ -98,6 +99,7 @@
             '<p><strong>内容边界：</strong>本站用于整理调查方向和定位官方依据，不构成法律意见。具体物件请向管辖自治体、保健所、消防署、建筑部门或专业人士确认。</p>' +
             '<nav class="footer-links" aria-label="页脚导航">' +
               '<a href="/resources/methodology/">内容方法</a>' +
+              '<a href="/industry/">行业知识</a>' +
               '<a href="/resources/updates/">更新记录</a>' +
               '<a href="/resources/glossary/">术语表</a>' +
               '<a href="/resources/sources/">官方资料</a>' +
@@ -120,6 +122,10 @@
       "消防": "火灾 火災 自動火災報知設備 避难 避難",
       "垃圾": "ごみ 废弃物 廃棄物 事业系 事業系",
       "名簿": "宿泊者名簿 本人确认 本人確認",
+      "定价": "收益 ADR RevPAR 入住率 价格",
+      "平台": "OTA Airbnb Booking Agoda Trip.com PMS",
+      "维修": "设备故障 清扫 备品 智能锁 漏水",
+      "培训": "岗位 新人 能力 授权 SOP",
       "涩谷": "渋谷",
       "丰岛": "豊島",
       "台东": "台東"
@@ -231,7 +237,7 @@
       return '<li><a href="' + escapeHtml(source.url) + '"' + externalAttrs(source.url) + ">" + escapeHtml(source.title) + " ↗</a></li>";
     }).join("");
     return "<h2>" + escapeHtml(ward.name) + "</h2>" +
-      '<div class="detail-group"><h3>研究状态</h3><p>' + escapeHtml(statusLabels[rule.researchStatus] || rule.researchStatus) + "；" + escapeHtml(changeLabels[rule.changeStatus] || rule.changeStatus) + "。状态只表示资料核验进度，不代表限制宽松程度。</p></div>" +
+      '<div class="detail-group"><h3>研究状态</h3><p>内容等级：' + escapeHtml(ward.contentLevel || (rule.researchStatus === "verified" ? "L3" : rule.researchStatus === "partial" ? "L2" : "L1")) + "；" + escapeHtml(statusLabels[rule.researchStatus] || rule.researchStatus) + "；" + escapeHtml(changeLabels[rule.changeStatus] || rule.changeStatus) + "。状态只表示资料核验进度，不代表限制宽松程度。</p></div>" +
       '<div class="detail-group"><h3>区域与期间</h3><p><strong>区域：</strong>' + escapeHtml(rule.areaRestriction) + "</p><p><strong>期间：</strong>" + escapeHtml(rule.periodRestriction) + "</p><p><strong>可运营期间摘要：</strong>" + escapeHtml(rule.allowedPeriodSummary) + "</p></div>" +
       '<div class="detail-group"><h3>家主与管理</h3><p><strong>家主居住型：</strong>' + escapeHtml(rule.ownerOccupiedRule) + "</p><p><strong>家主不在型：</strong>" + escapeHtml(rule.nonOwnerOccupiedRule) + "</p><p><strong>管理业者：</strong>" + escapeHtml(rule.managementRule) + "</p></div>" +
       '<div class="detail-group"><h3>学校、近邻与应急</h3><p><strong>学校周边：</strong>' + escapeHtml(rule.schoolAreaRule) + "</p><p><strong>近邻程序：</strong>" + escapeHtml(rule.neighborNotice) + "</p><p><strong>紧急响应：</strong>" + escapeHtml(rule.emergencyResponse) + "</p></div>" +
@@ -466,10 +472,13 @@
         return '<a href="' + escapeHtml(url) + '">' + escapeHtml(url) + "</a>";
       }).join("");
       return '<article class="source-card">' +
-        '<div class="source-card__meta"><span>A级</span><span>' + escapeHtml(source.authority) + "</span><span>" + escapeHtml(statusLabels[source.status] || source.status) + "</span></div>" +
+        '<div class="source-card__meta"><span>' + escapeHtml(source.sourceType || "政府官方") + '</span><span>' + escapeHtml(source.authority) + "</span><span>" + escapeHtml(statusLabels[source.status] || source.status) + "</span></div>" +
         "<h2>" + escapeHtml(source.title) + "</h2>" +
+        (source.summary ? '<p>' + escapeHtml(source.summary) + '</p>' : '') +
         '<p><strong>制度：</strong>' + escapeHtml(source.system) + "　<strong>地区：</strong>" + escapeHtml(source.region) + "</p>" +
-        '<p><strong>文件：</strong>' + escapeHtml(source.documentType) + "　<strong>核验：</strong>" + escapeHtml(source.verifiedAt) + "</p>" +
+        '<p><strong>文件：</strong>' + escapeHtml(source.documentType) + "　<strong>核验：</strong>" + escapeHtml(source.verifiedAt) + "　<strong>复核：</strong>" + escapeHtml(source.reviewDue || "待设置") + "</p>" +
+        (source.businessImpact ? '<p><strong>业务影响：</strong>' + escapeHtml(source.businessImpact) + '</p>' : '') +
+        (source.confirmationNeeded ? '<p><strong>仍需确认：</strong>' + escapeHtml(source.confirmationNeeded) + '</p>' : '') +
         '<div class="source-topics" aria-label="主题">' + topics + "</div>" +
         '<a class="source-primary-link" href="' + escapeHtml(source.url) + '"' + externalAttrs(source.url) + ">打开官方原文 ↗</a>" +
         '<div class="source-related"><strong>相关页面</strong>' + related + "</div>" +
@@ -494,8 +503,12 @@
       initExternalLinks();
     }
 
-    loadJson("/data/sources.json").then(function (data) {
-      sources = data;
+    Promise.all([loadJson("/data/sources.json"), loadJson("/data/source-metadata.json")]).then(function (payload) {
+      var metadata = {};
+      payload[1].forEach(function (item) { metadata[item.id] = item; });
+      sources = payload[0].map(function (source) {
+        return Object.assign({}, source, metadata[source.id] || {});
+      });
       fillSelect(authority, unique("authority"));
       fillSelect(region, unique("region"));
       fillSelect(system, unique("system"));
