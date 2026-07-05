@@ -939,7 +939,7 @@ svg {
 
 .directory-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 330px;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 390px);
   align-items: start;
   gap: 28px;
 }
@@ -974,6 +974,50 @@ svg {
 .ward-detail h2 {
   margin: 0 0 18px;
   color: var(--navy-950);
+}
+
+.ward-research-status {
+  display: inline-flex;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy-900);
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.ward-research-status--pending {
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.source-link-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.source-link-list li + li {
+  margin-top: 8px;
+}
+
+.rule-fact {
+  margin: 0 0 14px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy-800);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.rule-fact h3,
+.rule-fact p {
+  margin-top: 0;
+}
+
+.rule-fact p:last-child {
+  margin-bottom: 0;
 }
 
 .detail-group {

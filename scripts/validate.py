@@ -170,6 +170,23 @@ def main() -> int:
     if len(slugs) != len(set(slugs)):
         errors.append("Duplicate ward slug")
     today = date.today()
+    priority_wards = {
+        "shinjuku", "shibuya", "toshima", "nakano", "taito",
+        "sumida", "chuo", "chiyoda", "arakawa",
+    }
+    restriction_fields = (
+        "researchStatus", "changeStatus", "areaRestriction", "periodRestriction",
+        "allowedPeriodSummary", "ownerOccupiedRule", "nonOwnerOccupiedRule",
+        "schoolAreaRule", "managementRule", "neighborNotice", "emergencyResponse",
+        "wasteRule", "transitionNote", "practicalImpact", "effectiveFrom",
+        "officialSources", "verifiedAt", "reviewDue",
+    )
+    pending_text_fields = (
+        "areaRestriction", "periodRestriction", "allowedPeriodSummary",
+        "ownerOccupiedRule", "nonOwnerOccupiedRule", "schoolAreaRule",
+        "managementRule", "neighborNotice", "emergencyResponse", "wasteRule",
+        "transitionNote", "practicalImpact",
+    )
     for ward in wards:
         page = ROOT / "tokyo" / ward["slug"] / "index.html"
         if not page.exists():
@@ -186,6 +203,57 @@ def main() -> int:
         due = date.fromisoformat(ward["reviewDue"])
         if due < today:
             errors.append(f"Ward {ward['name']} review overdue: {due}")
+        restriction = ward.get("minpakuRestriction")
+        if not isinstance(restriction, dict):
+            errors.append(f"Ward {ward['slug']} missing minpakuRestriction")
+            continue
+        for field in restriction_fields:
+            if field not in restriction:
+                errors.append(f"Ward {ward['slug']} restriction missing {field}")
+        if restriction.get("researchStatus") not in {"verified", "partial", "pending"}:
+            errors.append(f"Ward {ward['slug']} invalid researchStatus")
+        if restriction.get("changeStatus") not in {"stable", "recent-change", "transition"}:
+            errors.append(f"Ward {ward['slug']} invalid changeStatus")
+        if ward["slug"] in priority_wards:
+            if restriction.get("researchStatus") != "verified":
+                errors.append(f"Priority ward {ward['slug']} is not verified")
+            for field in pending_text_fields:
+                if not restriction.get(field):
+                    errors.append(f"Priority ward {ward['slug']} missing {field}")
+            for field in ("verifiedAt", "reviewDue"):
+                if not restriction.get(field):
+                    errors.append(f"Priority ward {ward['slug']} missing {field}")
+            if restriction.get("verifiedAt"):
+                date.fromisoformat(restriction["verifiedAt"])
+            if restriction.get("reviewDue"):
+                restriction_due = date.fromisoformat(restriction["reviewDue"])
+                if restriction_due < today:
+                    errors.append(f"Priority ward {ward['name']} restriction review overdue: {restriction_due}")
+            if page.exists():
+                page_text = page.read_text(encoding="utf-8")
+                for heading in ("可运营期间摘要", "学校周边", "管理业者要求", "官方来源"):
+                    if heading not in page_text:
+                        errors.append(f"Priority ward page {ward['slug']} missing {heading}")
+                for source in restriction.get("officialSources", []):
+                    if source.get("url") not in page_text:
+                        errors.append(f"Priority ward page {ward['slug']} missing source {source.get('url')}")
+        else:
+            if restriction.get("researchStatus") != "pending":
+                errors.append(f"Non-priority ward {ward['slug']} must remain pending")
+            for field in pending_text_fields:
+                if restriction.get(field) != "待向管辖窗口确认":
+                    errors.append(f"Pending ward {ward['slug']} must mark {field} for confirmation")
+            if restriction.get("verifiedAt") is not None or restriction.get("reviewDue") is not None:
+                errors.append(f"Pending ward {ward['slug']} must not claim verification dates")
+        sources = restriction.get("officialSources")
+        if not isinstance(sources, list) or not sources:
+            errors.append(f"Ward {ward['slug']} missing officialSources")
+        else:
+            for source in sources:
+                if not source.get("title") or not source.get("url", "").startswith("https://"):
+                    errors.append(f"Ward {ward['slug']} has invalid official source")
+        if restriction.get("effectiveFrom") is not None:
+            date.fromisoformat(restriction["effectiveFrom"])
 
     search_entries = load_json(ROOT / "data" / "search-index.json")
     seen_urls: set[str] = set()

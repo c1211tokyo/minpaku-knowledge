@@ -208,21 +208,35 @@
   }
 
   function renderWardRow(ward) {
+    var rule = ward.minpakuRestriction;
+    var statusLabels = { verified: "已核验", partial: "部分核验", pending: "待核验" };
     return '<tr tabindex="0" data-ward="' + escapeHtml(ward.slug) + '">' +
       '<td data-label="区"><a href="/tokyo/' + escapeHtml(ward.slug) + '/"><strong>' + escapeHtml(ward.name) + "</strong></a></td>" +
-      '<td data-label="主管窗口">' + escapeHtml(ward.department) + "</td>" +
-      '<td data-label="规则摘要">' + escapeHtml(ward.restrictionSummary) + "</td>" +
-      '<td data-label="最后核验"><time datetime="' + escapeHtml(ward.lastVerified) + '">' + escapeHtml(ward.lastVerified) + "</time></td>" +
-      '<td data-label="状态"><span class="status ' + (ward.statusTone ? "status--" + ward.statusTone : "") + '">' + escapeHtml(ward.status) + "</span></td>" +
+      '<td data-label="研究状态"><span class="ward-research-status ward-research-status--' + escapeHtml(rule.researchStatus) + '">' + escapeHtml(statusLabels[rule.researchStatus] || rule.researchStatus) + "</span></td>" +
+      '<td data-label="区域限制">' + escapeHtml(rule.areaRestriction) + "</td>" +
+      '<td data-label="期间限制">' + escapeHtml(rule.periodRestriction) + "</td>" +
+      '<td data-label="可运营期间">' + escapeHtml(rule.allowedPeriodSummary) + "</td>" +
+      '<td data-label="核验日期">' + (rule.verifiedAt ? '<time datetime="' + escapeHtml(rule.verifiedAt) + '">' + escapeHtml(rule.verifiedAt) + "</time>" : "待核验") + "</td>" +
     "</tr>";
   }
 
   function renderWardDetail(ward) {
+    var rule = ward.minpakuRestriction;
+    var statusLabels = { verified: "已核验", partial: "部分核验", pending: "待核验" };
+    var changeLabels = { stable: "未发现近期变更", "recent-change": "近期有变更", transition: "处于过渡期" };
+    var sourceLinks = rule.officialSources.map(function (source) {
+      return '<li><a href="' + escapeHtml(source.url) + '"' + externalAttrs(source.url) + ">" + escapeHtml(source.title) + " ↗</a></li>";
+    }).join("");
     return "<h2>" + escapeHtml(ward.name) + "</h2>" +
+      '<div class="detail-group"><h3>研究状态</h3><p>' + escapeHtml(statusLabels[rule.researchStatus] || rule.researchStatus) + "；" + escapeHtml(changeLabels[rule.changeStatus] || rule.changeStatus) + "。状态只表示资料核验进度，不代表限制宽松程度。</p></div>" +
+      '<div class="detail-group"><h3>区域与期间</h3><p><strong>区域：</strong>' + escapeHtml(rule.areaRestriction) + "</p><p><strong>期间：</strong>" + escapeHtml(rule.periodRestriction) + "</p><p><strong>可运营期间摘要：</strong>" + escapeHtml(rule.allowedPeriodSummary) + "</p></div>" +
+      '<div class="detail-group"><h3>家主与管理</h3><p><strong>家主居住型：</strong>' + escapeHtml(rule.ownerOccupiedRule) + "</p><p><strong>家主不在型：</strong>" + escapeHtml(rule.nonOwnerOccupiedRule) + "</p><p><strong>管理业者：</strong>" + escapeHtml(rule.managementRule) + "</p></div>" +
+      '<div class="detail-group"><h3>学校、近邻与应急</h3><p><strong>学校周边：</strong>' + escapeHtml(rule.schoolAreaRule) + "</p><p><strong>近邻程序：</strong>" + escapeHtml(rule.neighborNotice) + "</p><p><strong>紧急响应：</strong>" + escapeHtml(rule.emergencyResponse) + "</p></div>" +
+      '<div class="detail-group"><h3>垃圾与实务影响</h3><p><strong>垃圾：</strong>' + escapeHtml(rule.wasteRule) + "</p><p><strong>实务影响：</strong>" + escapeHtml(rule.practicalImpact) + "</p></div>" +
+      '<div class="detail-group"><h3>过渡说明</h3><p>' + escapeHtml(rule.transitionNote) + "</p></div>" +
       '<div class="detail-group"><h3>主管窗口</h3><p>' + escapeHtml(ward.department) + "<br>" + escapeHtml(ward.phone) + "</p></div>" +
-      '<div class="detail-group"><h3>规则摘要</h3><p>' + escapeHtml(ward.restrictionSummary) + "</p></div>" +
-      '<div class="detail-group"><h3>申请前确认</h3><p>' + escapeHtml(ward.precheck) + "</p></div>" +
-      '<div class="detail-group"><h3>核验状态</h3><p>最后核验：' + escapeHtml(ward.lastVerified) + "<br>下次复核：" + escapeHtml(ward.reviewDue) + "</p></div>" +
+      '<div class="detail-group"><h3>核验</h3><p>生效日：' + escapeHtml(rule.effectiveFrom || "未单列") + "<br>最后核验：" + escapeHtml(rule.verifiedAt || "待核验") + "<br>下次复核：" + escapeHtml(rule.reviewDue || "待核验") + "</p></div>" +
+      '<div class="detail-group"><h3>官方来源</h3><ul class="source-link-list">' + sourceLinks + "</ul></div>" +
       '<div class="detail-group"><a class="button button--secondary" href="/tokyo/' + escapeHtml(ward.slug) + '/">查看本区详情</a> <a href="' + escapeHtml(ward.officialUrl) + '"' + externalAttrs(ward.officialUrl) + ">官方页面 ↗</a></div>";
   }
 
@@ -240,13 +254,25 @@
       var query = normalizedText(search ? search.value : "");
       return wards.filter(function (ward) {
         var haystack = normalizedText([
-          ward.name, ward.department, ward.restrictionSummary,
-          ward.status, ward.tags.join(" ")
+          ward.name, ward.department, ward.restrictionSummary, ward.status,
+          ward.minpakuRestriction.areaRestriction,
+          ward.minpakuRestriction.periodRestriction,
+          ward.minpakuRestriction.allowedPeriodSummary,
+          ward.minpakuRestriction.schoolAreaRule,
+          ward.minpakuRestriction.managementRule,
+          ward.minpakuRestriction.neighborNotice,
+          ward.minpakuRestriction.changeStatus,
+          ward.tags.join(" ")
         ].join(" "));
         var matchesText = !query || query.split(" ").every(function (token) {
           return haystack.indexOf(token) !== -1;
         });
-        var matchesFilter = filter === "all" || ward.tags.indexOf(filter) !== -1;
+        var rule = ward.minpakuRestriction;
+        var matchesFilter = filter === "all" ||
+          rule.researchStatus === filter ||
+          rule.changeStatus === filter ||
+          (filter === "school" && rule.schoolAreaRule !== "待向管辖窗口确认") ||
+          (filter === "management" && rule.managementRule !== "待向管辖窗口确认");
         return matchesText && matchesFilter;
       });
     }
@@ -265,7 +291,7 @@
       tbody.innerHTML = list.map(renderWardRow).join("");
       count.textContent = String(list.length);
       if (!list.length) {
-        tbody.innerHTML = '<tr><td colspan="5">没有符合当前条件的区，请清除筛选。</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="6">没有符合当前条件的区，请清除筛选。</td></tr>';
         detail.innerHTML = "<h2>无结果</h2><p>请更换关键词或筛选条件。</p>";
         return;
       }
@@ -276,7 +302,7 @@
       wards = data;
       render();
     }).catch(function () {
-      tbody.innerHTML = '<tr><td colspan="5">23区资料暂时无法加载，请稍后重试。</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6">23区资料暂时无法加载，请稍后重试。</td></tr>';
     });
 
     if (search) search.addEventListener("input", render);
