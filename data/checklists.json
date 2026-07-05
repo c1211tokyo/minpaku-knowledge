@@ -57,5 +57,13 @@
       {"id": "open-incident", "label": "建立投诉、事故和遗失物记录", "note": "记录时间、响应、证据和后续改善。"},
       {"id": "open-ota", "label": "核对OTA刊登内容与许可信息", "note": "名称、地址、编号、人数和设施说明应一致。"}
     ]
+  },
+  {
+    "title": "税务与保险",
+    "types": ["preopen", "minpaku", "ryokan", "operations"],
+    "items": [
+      {"id": "tax-accounting", "label": "确认税务处理并建立凭证记录", "note": "由税务机关或税理士确认主体、所得、消费税、宿泊税、资产和申报周期。"},
+      {"id": "insurance-business", "label": "确认保险明确覆盖住宿营业用途", "note": "向保险公司书面确认火灾、第三者责任、停业、外包和主要除外责任。"}
+    ]
   }
 ]
