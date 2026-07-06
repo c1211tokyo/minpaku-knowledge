@@ -572,43 +572,30 @@
     gate.setAttribute("aria-modal", "true");
     gate.setAttribute("aria-labelledby", "access-gate-title");
     gate.innerHTML = '<div class="access-gate__panel">' +
-      '<p class="access-gate__brand">Minpaku Knowledge</p>' +
-      '<h1 id="access-gate-title">受控资料库</h1>' +
-      '<p>请输入访问口令后进入日本民宿・旅馆合规知识库。</p>' +
+      '<h1 class="access-gate__brand" id="access-gate-title">Minpaku Knowledge</h1>' +
       '<form class="access-gate__form">' +
-        '<label for="access-code">访问口令</label>' +
-        '<div class="access-gate__input-row">' +
-          '<input id="access-code" name="access-code" type="password" autocomplete="off" required>' +
-          '<button class="button button--secondary" type="button" data-access-toggle aria-pressed="false">显示</button>' +
-        '</div>' +
-        '<p class="access-gate__error" data-access-error role="alert" aria-live="polite"></p>' +
-        '<button class="button access-gate__submit" type="submit">进入资料库</button>' +
+        '<label for="access-code">Key</label>' +
+        '<input id="access-code" name="access-code" type="password" autocomplete="off" aria-describedby="access-error" required>' +
+        '<p class="access-gate__error" id="access-error" data-access-error role="alert" aria-live="polite" hidden></p>' +
+        '<button class="access-gate__submit" type="submit">Enter</button>' +
       '</form>' +
-      '<div class="notice notice--warning"><strong>安全说明：</strong>此入口仅用于减少随手访问，不构成加密或真实访问控制。请勿在本站存放客户资料、合同、账号或其他机密信息。</div>' +
     '</div>';
     document.body.prepend(gate);
 
     var form = gate.querySelector("form");
     var input = gate.querySelector("input");
-    var toggle = gate.querySelector("[data-access-toggle]");
     var error = gate.querySelector("[data-access-error]");
     var submit = gate.querySelector("[type=submit]");
-
-    toggle.addEventListener("click", function () {
-      var show = input.type === "password";
-      input.type = show ? "text" : "password";
-      toggle.textContent = show ? "隐藏" : "显示";
-      toggle.setAttribute("aria-pressed", String(show));
-      input.focus();
-    });
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       error.textContent = "";
+      error.hidden = true;
       submit.disabled = true;
       digestAccessCode(input.value).then(function (digest) {
         if (digest !== ACCESS_DIGEST) {
           error.textContent = "访问口令不正确，请重新输入。";
+          error.hidden = false;
           input.value = "";
           input.focus();
           return;
@@ -617,6 +604,7 @@
           sessionStorage.setItem(ACCESS_SESSION_KEY, "1");
         } catch (storageError) {
           error.textContent = "当前浏览器无法保存会话状态，请检查隐私设置。";
+          error.hidden = false;
           return;
         }
         gate.remove();
@@ -632,6 +620,7 @@
         }
       }).catch(function () {
         error.textContent = "当前浏览器无法完成本地验证，请使用最新版浏览器。";
+        error.hidden = false;
       }).finally(function () {
         submit.disabled = false;
       });
