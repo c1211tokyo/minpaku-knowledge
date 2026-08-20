@@ -7,8 +7,8 @@
     "officialUrl": "https://www.city.chiyoda.lg.jp/koho/kurashi/jutakushukuhakujigyo/index.html",
     "restrictionSummary": "家主居住型在A/B/C区域周日正午至周五正午不可；家主不在型在A/B/C区域原则上全日不可。未满足駆け付け要件的管理者在全区均不可。",
     "precheck": "确认用途地域、管理规约、近邻程序、消防及事业系垃圾处理。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "新规已核验",
     "statusTone": "warning",
     "tags": [
@@ -38,25 +38,29 @@
           "url": "https://www.city.chiyoda.lg.jp/koho/kurashi/jutakushukuhakujigyo/jorei.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
     "slug": "chuo",
     "name": "中央区",
-    "department": "中央区保健所 生活衛生課",
-    "phone": "03-3541-5936",
-    "officialUrl": "https://www.city.chuo.lg.jp/kenkouiryou/eisei/seikatsueisei/minpaku/index.html",
+    "department": "中央区保健所 生活衛生課 環境衛生担当",
+    "phone": "03-3541-5938",
+    "officialUrl": "https://www.city.chuo.lg.jp/a0030/kenkouiryou/eisei/seikatsueisei/minpaku/jyutakujyukuhakujigyojyorei.html",
     "restrictionSummary": "全区仅限周六正午至周一正午实施住宅宿泊事业。",
-    "precheck": "先阅读“中央区的规则”，再进行消防、垃圾和近邻程序确认。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "precheck": "先按全区周末窗口测算，再完成7日前周知、约100米对象整理、消防咨询、事业系垃圾合同和迅速到场体制确认。",
+    "lastVerified": "2026-08-20",
+    "reviewDue": "2026-09-19",
     "status": "规则已核验",
     "statusTone": "good",
+    "contentLevel": "L3",
     "tags": [
       "official",
-      "restriction"
+      "restriction",
+      "neighbor",
+      "waste",
+      "updated"
     ],
     "minpakuRestriction": {
       "researchStatus": "verified",
@@ -64,24 +68,40 @@
       "areaRestriction": "中央区全域为实施限制区域。",
       "periodRestriction": "全区仅限周六正午至周一正午实施住宅宿泊事业。",
       "allowedPeriodSummary": "原则上每周仅周六正午至周一正午，且仍受国家每年180日上限约束。",
-      "ownerOccupiedRule": "区规则摘要未列家主居住型例外，具体适用待向管辖窗口确认。",
-      "nonOwnerOccupiedRule": "区规则摘要未列家主不在型例外，须另行满足国家管理委托要求。",
-      "schoolAreaRule": "区规则页未列学校周边的独立区域规则；具体地址待向管辖窗口确认。",
-      "managementRule": "须建立投诉或事故发生时迅速到场的体制；具体时间标准待向管辖窗口确认。",
-      "neighborNotice": "届出7日前须通过说明会等方式向周边住民周知。",
-      "emergencyResponse": "发生纠纷或投诉时须建立迅速到场体制。",
-      "wasteRule": "宿泊者垃圾由事业者负责处理。",
-      "transitionNote": "本轮核对的官方规则页发布于2024-05-14，未见过渡措施说明。",
-      "practicalImpact": "全区均受周末时段限制，地址初筛不能因商业区而跳过期间核对。",
+      "ownerOccupiedRule": "区条例未设置家主居住型的期间限制例外；中央区全域同样适用周一正午至周六正午禁止。",
+      "nonOwnerOccupiedRule": "全区适用同一期间限制；符合国家规定的家主不在情形还须将法定管理业务整体委托给已登记住宅宿泊管理业者。",
+      "schoolAreaRule": "当前区条例与实施要纲未设置学校周边的独立期间限制；但全区统一限制仍适用。",
+      "managementRule": "须建立纠纷、投诉、灾害或事故时可迅速到场的体制；对宿泊者规则应采用面对面或其他能可靠确认本人身份的方法说明。",
+      "neighborNotice": "届出7日前须通过说明会、个别访问等方式周知；实施要纲把对象范围设为届出住宅周边约100米，并要求提交周知资料。",
+      "emergencyResponse": "须建立迅速到场体制并记录投诉处理；投诉与咨询记录原则上保存3年，具体分钟数待向管辖窗口确认。",
+      "wasteRule": "宿泊者垃圾属于事业系废弃物，由事业者负责并原则上自费委托有许可的处理业者；届出前应完成处理路线确认。",
+      "transitionNote": "截至2026-08-20未发现改变全区周一正午至周六正午限制的已公布新规或过渡措施。",
+      "practicalImpact": "商业区地址也不能跳过期间限制；项目测算须同时锁定周末窗口、约100米周知对象、垃圾合同和应急到场体制。",
       "effectiveFrom": null,
       "officialSources": [
         {
           "title": "中央区住宅宿泊事业规则",
           "url": "https://www.city.chuo.lg.jp/a0030/kenkouiryou/eisei/seikatsueisei/minpaku/jyutakujyukuhakujigyojyorei.html"
+        },
+        {
+          "title": "中央区住宅宿泊事业条例",
+          "url": "https://www.city.chuo.lg.jp/documents/3393/jorei.pdf"
+        },
+        {
+          "title": "中央区住宅宿泊事业实施要纲",
+          "url": "https://www.city.chuo.lg.jp/documents/3393/youkou.pdf"
+        },
+        {
+          "title": "中央区住宅宿泊事业届出手续",
+          "url": "https://www.city.chuo.lg.jp/a0030/kenkouiryou/eisei/seikatsueisei/minpaku/jyuutakusyukuhakujigyoutodokede.html"
+        },
+        {
+          "title": "中央区民泊垃圾处理",
+          "url": "https://www.city.chuo.lg.jp/a0039/kurashi/gomi/jigyousha/jigyougomi/minpaku.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-08-20",
+      "reviewDue": "2026-09-19"
     }
   },
   {
@@ -92,8 +112,8 @@
     "officialUrl": "https://www.city.minato.tokyo.jp/kankyoueiseishidou/minpaku2.html",
     "restrictionSummary": "家主不在型在住居专用地域和文教地区受三个长期间限制；家主居住型不在本条例期间限制对象内。",
     "precheck": "先判家主类型，再叠加用途地域、文教地区、三个限制期间、14日前周知、消防和垃圾回收安排。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -122,8 +142,8 @@
           "url": "https://www.city.minato.tokyo.jp/kankyoueiseishidou/minpaku2.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
@@ -132,12 +152,13 @@
     "department": "健康部 衛生課 環境衛生係",
     "phone": "03-5273-3870",
     "officialUrl": "https://www.city.shinjuku.lg.jp/kenkou/eisei03_002086.html",
-    "restrictionSummary": "住居专用地域周一正午至周五正午不得实施。",
-    "precheck": "必须预约，核对第六版规则书、用途地域、垃圾确认书和消防安全清单。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "restrictionSummary": "四类住居专用地域周一正午至周五正午不得实施，期间内遇祝日也不解除限制。",
+    "precheck": "必须预约，先查四类住居专用地域和跨用途地域敷地比例，再完成7日前周知、垃圾确认书、消防咨询和建筑士安全清单。",
+    "lastVerified": "2026-08-20",
+    "reviewDue": "2026-09-19",
     "status": "规则已核验",
     "statusTone": "good",
+    "contentLevel": "L3",
     "tags": [
       "official",
       "restriction",
@@ -148,39 +169,43 @@
     "minpakuRestriction": {
       "researchStatus": "verified",
       "changeStatus": "stable",
-      "areaRestriction": "住居专用地域适用区级实施期间限制；其他用途地域不加区级星期限制。",
-      "periodRestriction": "住居专用地域周一正午至周五正午不得实施。",
-      "allowedPeriodSummary": "住居专用地域原则上周五正午至周一正午；其他区域可在国家每年180日上限内实施。",
-      "ownerOccupiedRule": "官方区规则页未列家主居住型的区级期间例外，具体适用待向管辖窗口确认。",
+      "areaRestriction": "第一、第二种低层住居专用地域及第一、第二种中高层住居专用地域适用区级期间限制；敷地跨用途地域且限制区部分超过一半时按限制区处理。",
+      "periodRestriction": "限制区域内周一正午至周五正午不得实施，期间内即使遇祝日也不解除。",
+      "allowedPeriodSummary": "限制区域原则上仅周五正午至周一正午；其他用途地域无区级星期限制，但仍受国家每年180日上限和全部运营义务约束。",
+      "ownerOccupiedRule": "区条例未设置家主居住型的期间限制例外；命中四类住居专用地域时仍适用周一正午至周五正午禁止。",
       "nonOwnerOccupiedRule": "宿泊期间家主不在时，原则上须委托已登记住宅宿泊管理业者。",
-      "schoolAreaRule": "本轮核对的区规则页未列学校周边独立限制，具体地址待向管辖窗口确认。",
-      "managementRule": "家主不在等情形原则上委托已登记住宅宿泊管理业者。",
-      "neighborNotice": "届出7日前须向近邻住民书面周知并向区报告。",
+      "schoolAreaRule": "当前区条例与第六版规则书未设置学校半径型的独立期间限制；是否另有个案性周知对象待向管辖窗口确认。",
+      "managementRule": "家主不在等情形原则上委托已登记管理业者；届出时通常还需建筑士确认安全措施、消防咨询记录及营业开始前的相关报告资料。",
+      "neighborNotice": "届出7日前须书面说明并向区提交报告；对象包括同建筑全部住居/店铺、同一敷地建筑、相邻敷地及依道路等关系计算的20米范围，具体名单应按第六版规则书制作。",
       "emergencyResponse": "事业者或管理业者须负责投诉和异常响应；具体到场时间待向管辖窗口确认。",
-      "wasteRule": "宿泊垃圾由住宅宿泊事业者及管理业者自行负责适当处理。",
-      "transitionNote": "本轮使用2026-03-10更新的第六版规则入口，未见过渡措施。",
-      "practicalImpact": "先在用途地域图确认是否为住居专用地域，再排可实施星期和管理体制。",
+      "wasteRule": "民泊垃圾属于事业系废弃物；须事前确认一般/产业废弃物的许可处理业者，并把清扫事务所确认书等资料纳入届出附件。",
+      "transitionNote": "截至2026-08-20，当前官方入口仍以2026-03-10更新的第六版规则书为准，未发现改变区域或营业星期的已公布新规。",
+      "practicalImpact": "用途地域、敷地过半规则、7日前近邻名单、垃圾合同、消防记录和建筑士安全清单应在预约前一次配齐。",
       "effectiveFrom": null,
       "officialSources": [
         {
           "title": "新宿区住宅宿泊事业与区规则",
           "url": "https://www.city.shinjuku.lg.jp/kenkou/eisei03_002086.html"
+        },
+        {
+          "title": "新宿区住宅宿泊事业规则书（第六版）",
+          "url": "https://www.city.shinjuku.lg.jp/content/000450150.pdf"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-08-20",
+      "reviewDue": "2026-09-19"
     }
   },
   {
     "slug": "bunkyo",
     "name": "文京区",
-    "department": "アカデミー推進部 アカデミー推進課 観光担当",
-    "phone": "03-5803-1174",
+    "department": "文京保健所 生活衛生課 環境衛生担当",
+    "phone": "03-5803-1227",
     "officialUrl": "https://www.city.bunkyo.lg.jp/b026/p003112/index.html",
     "restrictionSummary": "住居专用地域、住居地域、准工业地域和文教地区，周日正午至周五正午不得实施。",
     "precheck": "查用途地域和文教地区，按正午口径排期，并向区确认周知、垃圾、消防和管理附件。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-08-15",
+    "reviewDue": "2026-09-14",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -209,8 +234,8 @@
           "url": "https://www.city.bunkyo.lg.jp/b026/p003112/index.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-08-15",
+      "reviewDue": "2026-09-14"
     }
   },
   {
@@ -219,12 +244,13 @@
     "department": "台東保健所 生活衛生課 住宅宿泊事業担当",
     "phone": "03-3847-9403",
     "officialUrl": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.html",
-    "restrictionSummary": "管理者不常驻的届出住宅，周一正午至周六正午不得实施（祝日、年末年始除外）。",
-    "precheck": "确认是否属于管理者常驻、30分钟投诉响应、学校等周知及事业系垃圾处理。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
-    "status": "规则已核验",
-    "statusTone": "good",
+    "restrictionSummary": "2026-10-01起受理的新届出无论家主/管理者是否常驻，原则上周一正午至周六正午不得实施；2026-09-30前受理设施保留旧期间规则。",
+    "precheck": "先锁定完整届出资料到达日，再区分10月前后规则；完成15日前周知、15米/学校110米对象、消防记录、30分钟响应和事业系垃圾处理。",
+    "lastVerified": "2026-08-20",
+    "reviewDue": "2026-09-19",
+    "status": "施行前过渡期",
+    "statusTone": "warning",
+    "contentLevel": "L3",
     "tags": [
       "official",
       "restriction",
@@ -234,28 +260,40 @@
     ],
     "minpakuRestriction": {
       "researchStatus": "verified",
-      "changeStatus": "stable",
-      "areaRestriction": "台東区全域按管理者是否常驻区分实施期间。",
-      "periodRestriction": "管理者不常驻的届出住宅，周一正午至周六正午不得实施（祝日、年末年始除外）。",
-      "allowedPeriodSummary": "管理者不常驻时原则上周六正午至周一正午及被排除的祝日/年末年始窗口；管理者常驻时仍受国家180日上限。",
-      "ownerOccupiedRule": "家主本人作为常驻管理者时不适用上述不常驻期间限制；具体常驻判定待向管辖窗口确认。",
-      "nonOwnerOccupiedRule": "是否由管理者常驻决定区级期间限制；另须满足国家管理委托规则。",
-      "schoolAreaRule": "须向届出住宅周边住民及学校等事前周知。",
-      "managementRule": "管理者常驻与否直接决定周一正午至周六正午限制是否适用。",
-      "neighborNotice": "须在届出前向周边住民及学校等周知；范围和时点按区手册确认。",
-      "emergencyResponse": "投诉等须迅速处理，并在30分钟内响应。",
-      "wasteRule": "须适当处理民泊产生的废弃物。",
-      "transitionNote": "本轮核对页面更新于2026-06-17，未见过渡措施。",
-      "practicalImpact": "先确认常驻管理模式，再排营业日；不能仅凭地址用途判断。",
-      "effectiveFrom": null,
+      "changeStatus": "transition",
+      "areaRestriction": "台東区全域适用区级规则；2026-10-01前后的届出受理日决定是否仍可使用管理者常驻例外。",
+      "periodRestriction": "截至2026-09-30，管理者不常驻设施原则上周一正午至周六正午不得实施（祝日、年末年始除外）；2026-10-01起受理的新届出，不论常驻与否均适用该禁止期间。",
+      "allowedPeriodSummary": "10月起新受理设施原则上仅周六正午至周一正午及条例排除窗口；9月30日前受理设施继续按旧规则，常驻型仍可在国家180日上限内实施。",
+      "ownerOccupiedRule": "2026-09-30前受理且符合常驻定义时不受旧期间限制；2026-10-01起受理的新届出即使家主居住/常驻，也不再享有区级期间例外。",
+      "nonOwnerOccupiedRule": "当前不常驻型适用周一正午至周六正午禁止并须满足国家管理委托规则；10月起新受理设施与常驻型适用同一期间限制。",
+      "schoolAreaRule": "届出15日前须向学校、幼儿教育及保育设施等周知；区手册以其敷地距届出住宅敷地约110米内为对象。",
+      "managementRule": "旧规则的常驻判断包括届出住宅、同一建筑、同一敷地或相邻建筑且能察觉生活环境影响；无论有无宿泊者都须维持投诉应答和现场到场体制。",
+      "neighborNotice": "届出15日前书面周知：同建筑使用者、相邻敷地建筑、道路等对面原则水平15米内，以及敷地约110米内学校等；应保存对象表、地图和发放资料。",
+      "emergencyResponse": "接到投诉或询问后须能在30分钟内到达现场并妥善处理；联络与处理记录应作为运营台账保存。",
+      "wasteRule": "民泊垃圾属于事业系废弃物，须由事业者依法处理并事前确认收集、保管与委托路线。",
+      "transitionNote": "新条例自2026-10-01施行。期间限制不追溯至2026-09-30前已受理设施，但指导、劝告、改善命令、公开及至少每年一次检查等执行机制也覆盖既存设施。",
+      "practicalImpact": "分界看的是完整且形式合规资料到达保健所之日；9月30日提交但10月1日才补正完成，会按10月1日新规则处理。",
+      "effectiveFrom": "2026-10-01",
       "officialSources": [
         {
-          "title": "台東区住宅宿泊事业规则",
+          "title": "台東区住宅宿泊事业条例改正",
           "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.html"
+        },
+        {
+          "title": "台東区届出日认定说明",
+          "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/todokedebi.html"
+        },
+        {
+          "title": "台東区2026年7月届出手册",
+          "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.files/202607tebiki.pdf"
+        },
+        {
+          "title": "台東区届出前手续",
+          "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpaku20180613_002.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-08-20",
+      "reviewDue": "2026-09-19"
     }
   },
   {
@@ -265,11 +303,12 @@
     "phone": "03-5608-6939",
     "officialUrl": "https://www.city.sumida.lg.jp/kenko_fukushi/eisei/juutaku_syukuhaku/ji/minnpakujigyou.html",
     "restrictionSummary": "原则上周日正午至周五正午不得实施；届出者或管理业者等在届出住宅内或周边常驻并能察觉生活环境恶化时除外。",
-    "precheck": "优先确认2026年生效规则、说明会或个别访问要求、消防和垃圾处理。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "precheck": "先确认完整届出受理日与常驻例外，再预约窗口，完成5日前会议通知、20米对象说明、消防、垃圾事前咨询和30分钟到场体制。",
+    "lastVerified": "2026-08-20",
+    "reviewDue": "2026-09-19",
     "status": "新规已核验",
     "statusTone": "warning",
+    "contentLevel": "L3",
     "tags": [
       "official",
       "restriction",
@@ -285,12 +324,12 @@
       "ownerOccupiedRule": "届出者在届出住宅内或周边常驻且能察觉生活环境恶化时，可不适用区级工作日限制。",
       "nonOwnerOccupiedRule": "管理业者等满足住宅内或周边常驻并能察觉环境恶化的条件时可例外；否则适用全区工作日限制。",
       "schoolAreaRule": "本轮官方新规与指南未列学校周边独立限制；具体地址待向管辖窗口确认。",
-      "managementRule": "常驻例外是营业期间判断核心；是否满足“住宅内或周边、可察觉环境恶化”须由区确认。",
-      "neighborNotice": "届出前须以说明会或逐户访问说明；在实施5日前先书面通知，范围含同建筑及敷地20米内相关住民等，并随届出提交报告。",
-      "emergencyResponse": "指南要求说明紧急联络与投诉处理方法；具体到场时间待向管辖窗口确认。",
-      "wasteRule": "事业产生的废弃物由事业者自行负责依法适当处理，并进行清扫事务所事前咨询。",
-      "transitionNote": "新条例自2026-04-01施行，营业限制以2026-04-01以后许可申请/届出受理设施为对象。",
-      "practicalImpact": "届出受理日期与常驻模式共同决定是否受工作日限制；近邻说明范围已扩大并形成书面留痕。",
+      "managementRule": "常驻例外是营业期间判断核心；无论是否有宿泊者，须维持24小时投诉联络及接报后30分钟内到场体制，记录原则上保存3年。",
+      "neighborNotice": "说明会或逐户访问的日期须至少提前5日通知，并在届出日前完成；对象含同建筑、同敷地及届出敷地边界20米内土地/建筑的所有者、居住者和管理者，报告须附对象表、地图、资料及会议记录。",
+      "emergencyResponse": "须设置24小时联络窗口，并能在接到投诉或询问后30分钟内到达现场；即使当天无宿泊者也不能中断该体制。",
+      "wasteRule": "事业系废弃物由事业者负责依法处理；须先向清扫事务所咨询，并把事前咨询记录（様式4-2）作为届出附件。",
+      "transitionNote": "新条例自2026-04-01施行，期间限制仅适用于当日以后完整且形式合规资料被受理的届出；此前受理设施不适用新增期间限制。",
+      "practicalImpact": "2026年6月区方已因未提交定期报告对14个事业者、26处设施发出改善命令，并公开一名未履行事业者；定期报告已是现实执法风险。",
       "effectiveFrom": "2026-04-01",
       "officialSources": [
         {
@@ -300,10 +339,14 @@
         {
           "title": "墨田区2026年新条例说明",
           "url": "https://www.city.sumida.lg.jp/kuseijoho/kouhoukatudou/houdou/wadai/r8/080401_1.html"
+        },
+        {
+          "title": "墨田区民泊执法措施",
+          "url": "https://www.city.sumida.lg.jp/kenko_fukushi/eisei/juutaku_syukuhaku/kunotorikumi/minpakutorikumi.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-20",
+      "reviewDue": "2026-09-19"
     }
   },
   {
@@ -440,8 +483,8 @@
     "officialUrl": "https://www.city.ota.tokyo.jp/seikatsu/hoken/eisei/riyoubiyou/minpaku_shinpou.html",
     "restrictionSummary": "家主不在型在住居专用、工业等指定区域全期限制；学校周围100米内周一正午至周五正午限制。",
     "precheck": "先判家主类型和限制区域，再与旅馆业、特区民泊并行比较，完成学校周边、近邻说明、建筑、消防、垃圾和到场体制确认。",
-    "lastVerified": "2026-07-06",
-    "reviewDue": "2026-08-05",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "2026规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -470,8 +513,8 @@
           "url": "https://www.city.ota.tokyo.jp/seikatsu/hoken/eisei/riyoubiyou/minpaku_shinpou.html"
         }
       ],
-      "verifiedAt": "2026-07-06",
-      "reviewDue": "2026-08-05"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
@@ -523,11 +566,12 @@
     "phone": "03-3463-2287",
     "officialUrl": "https://www.city.shibuya.tokyo.jp/kenko/eisei/kankyo/minpaku.html",
     "restrictionSummary": "限制区域内不得实施期间为4月5日—7月20日、8月29日—10月第二个周一之前一周的周三、同一周的周六—12月25日、1月7日—3月25日。",
-    "precheck": "使用民泊系统制作届出后预约窗口，按届出日期选择正确手册并完成本人确认。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "precheck": "先以2026-07-01届出分界选用新旧手册，再查用途地域/文教地区，完成60日前周知、消防、建筑士安全清单、许可垃圾合同和到场体制。",
+    "lastVerified": "2026-08-20",
+    "reviewDue": "2026-09-19",
     "status": "过渡期已核验",
     "statusTone": "warning",
+    "contentLevel": "L3",
     "tags": [
       "official",
       "restriction",
@@ -543,12 +587,12 @@
       "ownerOccupiedRule": "个人事业者、管理居室不超过5室，并在宿泊期间不离开或生活本拠与届出住宅同建筑、同敷地或相邻且能感知环境恶化时，可不适用区级期间限制。",
       "nonOwnerOccupiedRule": "2026-07-01以后届出的家主不在型通常受扩大后的限制区域与期间约束，并须满足国家管理委托要求。",
       "schoolAreaRule": "文教地区属于限制区域；官方摘要未设置单独学校半径规则，具体地址须核对都市计划信息。",
-      "managementRule": "家主不在型原则上委托已登记管理业者；2026-06-30以前届出住宅另有100米内据点等旧特例条件。",
-      "neighborNotice": "2026-07-01以后届出须在届出预定日60日前周知，周知事项增加废弃物处理业者许可编号，并向区提交记录与所用书面。",
-      "emergencyResponse": "新届出须提交迅速处理投诉等的体制资料；旧届出特例要求24小时联络及10分钟内到场。",
-      "wasteRule": "须委托有许可的民间废弃物处理业者，并提交合同等资料。",
-      "transitionNote": "2026-07-01为新旧规则分界；2026-06-30以前届出继续适用旧限制区域和旧特例条件。",
-      "practicalImpact": "同一地址必须先确认届出日期，再核对用途地域/文教地区；新届出在限制区域内的可用日大幅缩短。",
+      "managementRule": "一般在法人届出、管理居室超过5室或家主离开超过通常短时范围等情形，须把法定管理业务整体委托给一名已登记管理业者；2026-06-30以前届出住宅另有100米内据点等旧特例。",
+      "neighborNotice": "2026-07-01以后届出须在预定届出日60日前书面周知：同建筑全部住户、敷地边界10米内住宅的所有者/居住者、管理组合或管理者及町会；资料须列垃圾处理业者及许可编号并向区提交记录。",
+      "emergencyResponse": "新届出的一般体制以接报后30分钟内到场为基准，因通常交通状况确有必要时按官方资料确认是否可按60分钟设计；旧届出特例仍要求24小时联络及10分钟内到场。",
+      "wasteRule": "须与有许可的民间一般/产业废弃物处理业者签约，并把处理业者名称、联系方式、许可编号及合同资料纳入周知和届出材料。",
+      "transitionNote": "2026-07-01为新旧规则分界；2026-06-30以前届出继续适用旧限制区域、旧周知及旧特例条件，不因新规施行自动切换。",
+      "practicalImpact": "区页面2026-08-13新增/明确管理业者变更资料：变更应事前预约、先周知近邻与町会并复核钥匙交付、垃圾合同及30分钟（旧特例10分钟）到场能力。",
       "effectiveFrom": "2026-07-01",
       "officialSources": [
         {
@@ -558,10 +602,18 @@
         {
           "title": "2026年条例改正概要",
           "url": "https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/d06ba0466e004a5ca37f230da4c46e12/minpaku_kaisei_gaiyo.pdf"
+        },
+        {
+          "title": "渋谷区2026年住宅宿泊事业手册",
+          "url": "https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/0cf0ffe053ba4b8b881e0125e57916bb/minpaku_tebiki.pdf"
+        },
+        {
+          "title": "渋谷区住宅宿泊管理业者变更资料",
+          "url": "https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/512e1b55819d401691a051fc598bfce1/minpaku_kanrigyosha-henkou.pdf"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-20",
+      "reviewDue": "2026-09-19"
     }
   },
   {
@@ -656,8 +708,8 @@
     "officialUrl": "https://www.city.toshima.lg.jp/214/kurashi/ese/kankyoese/minpaku.html",
     "restrictionSummary": "2026-12-16起，既存设施可实施期限定为春假3月15日—4月10日、暑假7月1日—8月31日、寒假12月15日—1月14日。",
     "precheck": "预约窗口，核对30分钟响应、对面本人确认、垃圾业者合同和未来限制。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "过渡期已核验",
     "statusTone": "warning",
     "tags": [
@@ -693,8 +745,8 @@
           "url": "https://www.city.toshima.lg.jp/documents/53829/gaiyou1.pdf"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
@@ -705,8 +757,8 @@
     "officialUrl": "https://www.city.kita.lg.jp/socialcare-health/hygiene/1008979/1008980/1008989/1008990.html",
     "restrictionSummary": "现行官方手续要求事前咨询、消防记录、安全清单、管理体制和现场调查；2026年公开的新条例仍为草案，不得当作生效规则。",
     "precheck": "先预约北区保健所，携图纸确认当前规则、消防、安全措施、管理方式、周知和垃圾；不得因页面未列期间限制即判定可经营。",
-    "lastVerified": "2026-07-06",
-    "reviewDue": "2026-08-05",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "手续部分核验",
     "statusTone": "warning",
     "contentLevel": "L2",
@@ -739,8 +791,8 @@
           "url": "https://www.city.kita.lg.jp/city-information/feedback/1014238/1019605/1025303.html"
         }
       ],
-      "verifiedAt": "2026-07-06",
-      "reviewDue": "2026-08-05"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
@@ -751,8 +803,8 @@
     "officialUrl": "https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/kekka.html",
     "restrictionSummary": "周一正午至周六正午不得实施；祝日正午至翌日正午除外。",
     "precheck": "在提交前确认主管窗口、近邻、消防、垃圾和管理规约。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "规则已核验",
     "statusTone": "good",
     "tags": [
@@ -781,8 +833,8 @@
           "url": "https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/kekka.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
@@ -919,8 +971,8 @@
     "officialUrl": "https://www.city.katsushika.lg.jp/online/1007359/1030292/1007374/1007411/1039684.html",
     "restrictionSummary": "家主不在型在商业地域以外原则上周一正午至周六正午不得实施，休日及年末年始窗口除外。",
     "precheck": "先判是否商业地域及管理形态，再核对现场感知例外、周知、消防、规约、垃圾和投诉记录。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "新规已核验",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -949,8 +1001,8 @@
           "url": "https://www.city.katsushika.lg.jp/online/1007359/1030292/1007374/1007411/1039684.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   },
   {
@@ -961,8 +1013,8 @@
     "officialUrl": "https://www.city.edogawa.tokyo.jp/kenko/eisei/kankyo/syukuhakujigyoho/index.html",
     "restrictionSummary": "2026年7月1日起，管理业者管理型在住居专用和住居地域原则不得新设；家主管理型须满足3个月以上居住等条件。",
     "precheck": "先判届出是否处于过渡期、用途地域和管理形态，再核对居住事实、对面周知、消防、安全、垃圾和30分钟响应。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-08-04",
+    "lastVerified": "2026-08-11",
+    "reviewDue": "2026-09-10",
     "status": "新规已核验",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -991,8 +1043,8 @@
           "url": "https://www.city.edogawa.tokyo.jp/e055/kenko/eisei/kankyo/syukuhakujigyoho/juutakusyukuhakujigyou-kaishi.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-08-04"
+      "verifiedAt": "2026-08-11",
+      "reviewDue": "2026-09-10"
     }
   }
 ]
