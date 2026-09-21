@@ -7,8 +7,8 @@
     "officialUrl": "https://www.city.chiyoda.lg.jp/koho/kurashi/jutakushukuhakujigyo/index.html",
     "restrictionSummary": "家主居住型在A/B/C区域周日正午至周五正午不可；家主不在型在A/B/C区域原则上全日不可。未满足駆け付け要件的管理者在全区均不可。",
     "precheck": "确认用途地域、管理规约、近邻程序、消防及事业系垃圾处理。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "新规已核验",
     "statusTone": "warning",
     "tags": [
@@ -38,8 +38,8 @@
           "url": "https://www.city.chiyoda.lg.jp/koho/kurashi/jutakushukuhakujigyo/jorei.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -50,8 +50,8 @@
     "officialUrl": "https://www.city.chuo.lg.jp/a0030/kenkouiryou/eisei/seikatsueisei/minpaku/jyutakujyukuhakujigyojyorei.html",
     "restrictionSummary": "全区仅限周六正午至周一正午实施住宅宿泊事业。",
     "precheck": "先按全区周末窗口测算，再完成7日前周知、约100米对象整理、消防咨询、事业系垃圾合同和迅速到场体制确认。",
-    "lastVerified": "2026-08-20",
-    "reviewDue": "2026-09-19",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -100,8 +100,8 @@
           "url": "https://www.city.chuo.lg.jp/a0039/kurashi/gomi/jigyousha/jigyougomi/minpaku.html"
         }
       ],
-      "verifiedAt": "2026-08-20",
-      "reviewDue": "2026-09-19"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -112,8 +112,8 @@
     "officialUrl": "https://www.city.minato.tokyo.jp/kankyoueiseishidou/minpaku2.html",
     "restrictionSummary": "家主不在型在住居专用地域和文教地区受三个长期间限制；家主居住型不在本条例期间限制对象内。",
     "precheck": "先判家主类型，再叠加用途地域、文教地区、三个限制期间、14日前周知、消防和垃圾回收安排。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -142,8 +142,8 @@
           "url": "https://www.city.minato.tokyo.jp/kankyoueiseishidou/minpaku2.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -154,8 +154,8 @@
     "officialUrl": "https://www.city.shinjuku.lg.jp/kenkou/eisei03_002086.html",
     "restrictionSummary": "四类住居专用地域周一正午至周五正午不得实施，期间内遇祝日也不解除限制。",
     "precheck": "必须预约，先查四类住居专用地域和跨用途地域敷地比例，再完成7日前周知、垃圾确认书、消防咨询和建筑士安全清单。",
-    "lastVerified": "2026-08-20",
-    "reviewDue": "2026-09-19",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -192,8 +192,8 @@
           "url": "https://www.city.shinjuku.lg.jp/content/000450150.pdf"
         }
       ],
-      "verifiedAt": "2026-08-20",
-      "reviewDue": "2026-09-19"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -204,8 +204,8 @@
     "officialUrl": "https://www.city.bunkyo.lg.jp/b026/p003112/index.html",
     "restrictionSummary": "住居专用地域、住居地域、准工业地域和文教地区，周日正午至周五正午不得实施。",
     "precheck": "查用途地域和文教地区，按正午口径排期，并向区确认周知、垃圾、消防和管理附件。",
-    "lastVerified": "2026-08-15",
-    "reviewDue": "2026-09-14",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -234,8 +234,8 @@
           "url": "https://www.city.bunkyo.lg.jp/b026/p003112/index.html"
         }
       ],
-      "verifiedAt": "2026-08-15",
-      "reviewDue": "2026-09-14"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -246,8 +246,8 @@
     "officialUrl": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.html",
     "restrictionSummary": "2026-10-01起受理的新届出无论家主/管理者是否常驻，原则上周一正午至周六正午不得实施；2026-09-30前受理设施保留旧期间规则。",
     "precheck": "先锁定完整届出资料到达日，再区分10月前后规则；完成15日前周知、15米/学校110米对象、消防记录、30分钟响应和事业系垃圾处理。",
-    "lastVerified": "2026-08-20",
-    "reviewDue": "2026-09-19",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "施行前过渡期",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -292,8 +292,8 @@
           "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpaku20180613_002.html"
         }
       ],
-      "verifiedAt": "2026-08-20",
-      "reviewDue": "2026-09-19"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -304,8 +304,8 @@
     "officialUrl": "https://www.city.sumida.lg.jp/kenko_fukushi/eisei/juutaku_syukuhaku/ji/minnpakujigyou.html",
     "restrictionSummary": "原则上周日正午至周五正午不得实施；届出者或管理业者等在届出住宅内或周边常驻并能察觉生活环境恶化时除外。",
     "precheck": "先确认完整届出受理日与常驻例外，再预约窗口，完成5日前会议通知、20米对象说明、消防、垃圾事前咨询和30分钟到场体制。",
-    "lastVerified": "2026-08-20",
-    "reviewDue": "2026-09-19",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "新规已核验",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -345,8 +345,8 @@
           "url": "https://www.city.sumida.lg.jp/kenko_fukushi/eisei/juutaku_syukuhaku/kunotorikumi/minpakutorikumi.html"
         }
       ],
-      "verifiedAt": "2026-08-20",
-      "reviewDue": "2026-09-19"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -357,8 +357,8 @@
     "officialUrl": "https://www.city.koto.lg.jp/260403/fukushi/ese/kankyo/minpaku_index.html",
     "restrictionSummary": "区内全域周一正午至周六正午不得实施；法定休日正午至翌日正午除外。",
     "precheck": "全区先按工作日限制排期，再完成近邻书面周知、消防、建筑、管理规约和垃圾确认。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -387,8 +387,8 @@
           "url": "https://www.city.koto.lg.jp/260403/fukushi/ese/kankyo/minpaku_index.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -399,8 +399,8 @@
     "officialUrl": "https://www.city.shinagawa.tokyo.jp/PC/kenkou/kenkou-eisei/kenkou-eisei-kankyo/hpg000033251.html",
     "restrictionSummary": "商业地域、近邻商业地域（文教地区除外）可按180日；其他区域仅周六正午至周一正午，平日祝日不可。",
     "precheck": "先查用途地域及文教地区，再核对建筑士安全清单、消防、近邻、管理规约和垃圾。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -429,8 +429,8 @@
           "url": "https://www.city.shinagawa.tokyo.jp/PC/kenkou/kenkou-eisei/kenkou-eisei-kankyo/hpg000033251.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -441,8 +441,8 @@
     "officialUrl": "https://www.city.meguro.tokyo.jp/seikatsueisei/kenkoufukushi/eisei/minpaku.html",
     "restrictionSummary": "目黑区全域周日正午至周五正午不得实施。",
     "precheck": "按全区工作日限制排期，并在届出15日前完成近邻周知，再核对消防、管理规约和垃圾。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -471,8 +471,8 @@
           "url": "https://www.city.meguro.tokyo.jp/seikatsueisei/kenkoufukushi/eisei/minpaku.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -483,8 +483,8 @@
     "officialUrl": "https://www.city.ota.tokyo.jp/seikatsu/hoken/eisei/riyoubiyou/minpaku_shinpou.html",
     "restrictionSummary": "家主不在型在住居专用、工业等指定区域全期限制；学校周围100米内周一正午至周五正午限制。",
     "precheck": "先判家主类型和限制区域，再与旅馆业、特区民泊并行比较，完成学校周边、近邻说明、建筑、消防、垃圾和到场体制确认。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "2026规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -513,8 +513,8 @@
           "url": "https://www.city.ota.tokyo.jp/seikatsu/hoken/eisei/riyoubiyou/minpaku_shinpou.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -525,8 +525,8 @@
     "officialUrl": "https://www.city.setagaya.lg.jp/02245/3247.html",
     "restrictionSummary": "住居专用地域周一正午至周六正午原则不得实施；法定休日正午至翌日正午除外。",
     "precheck": "查住居专用地域，按周末和休日窗口排期，并完成周边周知、消防、图纸、规约和垃圾确认。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -555,8 +555,8 @@
           "url": "https://www.city.setagaya.lg.jp/02245/3247.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -567,8 +567,8 @@
     "officialUrl": "https://www.city.shibuya.tokyo.jp/kenko/eisei/kankyo/minpaku.html",
     "restrictionSummary": "限制区域内不得实施期间为4月5日—7月20日、8月29日—10月第二个周一之前一周的周三、同一周的周六—12月25日、1月7日—3月25日。",
     "precheck": "先以2026-07-01届出分界选用新旧手册，再查用途地域/文教地区，完成60日前周知、消防、建筑士安全清单、许可垃圾合同和到场体制。",
-    "lastVerified": "2026-08-20",
-    "reviewDue": "2026-09-19",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "过渡期已核验",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -612,20 +612,20 @@
           "url": "https://files.city.shibuya.tokyo.jp/assets/12995aba8b194961be709ba879857f70/512e1b55819d401691a051fc598bfce1/minpaku_kanrigyosha-henkou.pdf"
         }
       ],
-      "verifiedAt": "2026-08-20",
-      "reviewDue": "2026-09-19"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
     "slug": "nakano",
     "name": "中野区",
-    "department": "中野区保健所 生活環境分野",
+    "department": "中野区保健所 医薬環境衛生係",
     "phone": "03-3382-6663",
     "officialUrl": "https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/pet-eisei/kankyoueisei/jyutakusyukuhaku.html",
     "restrictionSummary": "限制区域内仅周五、周六、周日及国民祝日可宿泊；限制区域外无区级星期限制。",
     "precheck": "确认区域和期间、周边说明、消防、管理规约和废弃物。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "tags": [
@@ -645,7 +645,7 @@
       "neighborNotice": "届出7日前书面周知；限制区域内家主不在型还须在附近区设施举办说明会。",
       "emergencyResponse": "投诉及询问内容与处理须记录并保存3年以上；具体到场时间待向管辖窗口确认。",
       "wasteRule": "民泊产生的废弃物属于事业系废弃物，须依法适当处理。",
-      "transitionNote": "本轮核对页面更新于2026-06-17，未见过渡措施。",
+      "transitionNote": "官方页面显示2026-08-31更新；本轮未发现已公布的过渡措施。",
       "practicalImpact": "住宅用途地域直接决定可用星期；家主同居型的平日例外须先取得区长许可。",
       "effectiveFrom": null,
       "officialSources": [
@@ -654,8 +654,8 @@
           "url": "https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/pet-eisei/kankyoueisei/jyutakusyukuhaku.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -666,8 +666,8 @@
     "officialUrl": "https://www.city.suginami.tokyo.jp/s046/871.html",
     "restrictionSummary": "住居专用地域的家主不在型，周一正午至周五正午限制实施；休日窗口除外。",
     "precheck": "先判家主类型和住居专用地域，再完成周边书面周知、消防、安全、规约和事业系垃圾确认。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -696,8 +696,8 @@
           "url": "https://www.city.suginami.tokyo.jp/s046/871.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -708,8 +708,8 @@
     "officialUrl": "https://www.city.toshima.lg.jp/214/kurashi/ese/kankyoese/minpaku.html",
     "restrictionSummary": "2026-12-16起，既存设施可实施期限定为春假3月15日—4月10日、暑假7月1日—8月31日、寒假12月15日—1月14日。",
     "precheck": "预约窗口，核对30分钟响应、对面本人确认、垃圾业者合同和未来限制。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "过渡期已核验",
     "statusTone": "warning",
     "tags": [
@@ -745,8 +745,8 @@
           "url": "https://www.city.toshima.lg.jp/documents/53829/gaiyou1.pdf"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -757,8 +757,8 @@
     "officialUrl": "https://www.city.kita.lg.jp/socialcare-health/hygiene/1008979/1008980/1008989/1008990.html",
     "restrictionSummary": "现行官方手续要求事前咨询、消防记录、安全清单、管理体制和现场调查；2026年公开的新条例仍为草案，不得当作生效规则。",
     "precheck": "先预约北区保健所，携图纸确认当前规则、消防、安全措施、管理方式、周知和垃圾；不得因页面未列期间限制即判定可经营。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "手续部分核验",
     "statusTone": "warning",
     "contentLevel": "L2",
@@ -791,8 +791,8 @@
           "url": "https://www.city.kita.lg.jp/city-information/feedback/1014238/1019605/1025303.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -803,8 +803,8 @@
     "officialUrl": "https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/kekka.html",
     "restrictionSummary": "周一正午至周六正午不得实施；祝日正午至翌日正午除外。",
     "precheck": "在提交前确认主管窗口、近邻、消防、垃圾和管理规约。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "规则已核验",
     "statusTone": "good",
     "tags": [
@@ -833,8 +833,8 @@
           "url": "https://www.city.arakawa.tokyo.jp/a032/jigyousha/toroku/kekka.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -845,8 +845,8 @@
     "officialUrl": "https://www.city.itabashi.tokyo.jp/kenko/eisei/kankyo/ryokan/1003882.html",
     "restrictionSummary": "住居专用地域周日正午至周五正午限制实施；能够即时处理投诉的家主居住型等不在限制对象内。",
     "precheck": "查住居专用地域并判定是否满足即时响应例外，再核对周知、消防、规约、垃圾和管理委托。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -875,8 +875,8 @@
           "url": "https://www.city.itabashi.tokyo.jp/kenko/eisei/kankyo/ryokan/1003882.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -887,8 +887,8 @@
     "officialUrl": "https://www.city.nerima.tokyo.jp/hokenfukushi/eisei/minpaku/minnpaku.html",
     "restrictionSummary": "住居专用地域周一正午至周五正午不得实施；周末和法定休日窗口可实施。",
     "precheck": "查敷地过半是否属于住居专用地域，并在届出15日前完成近邻说明，再核对消防、规约和垃圾。",
-    "lastVerified": "2026-07-05",
-    "reviewDue": "2026-09-03",
+    "lastVerified": "2026-09-07",
+    "reviewDue": "2026-11-06",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -917,8 +917,8 @@
           "url": "https://www.city.nerima.tokyo.jp/hokenfukushi/eisei/minpaku/minnpaku.html"
         }
       ],
-      "verifiedAt": "2026-07-05",
-      "reviewDue": "2026-09-03"
+      "verifiedAt": "2026-09-07",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -971,8 +971,8 @@
     "officialUrl": "https://www.city.katsushika.lg.jp/online/1007359/1030292/1007374/1007411/1039684.html",
     "restrictionSummary": "家主不在型在商业地域以外原则上周一正午至周六正午不得实施，休日及年末年始窗口除外。",
     "precheck": "先判是否商业地域及管理形态，再核对现场感知例外、周知、消防、规约、垃圾和投诉记录。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "新规已核验",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -1001,8 +1001,8 @@
           "url": "https://www.city.katsushika.lg.jp/online/1007359/1030292/1007374/1007411/1039684.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   },
   {
@@ -1013,8 +1013,8 @@
     "officialUrl": "https://www.city.edogawa.tokyo.jp/kenko/eisei/kankyo/syukuhakujigyoho/index.html",
     "restrictionSummary": "2026年7月1日起，管理业者管理型在住居专用和住居地域原则不得新设；家主管理型须满足3个月以上居住等条件。",
     "precheck": "先判届出是否处于过渡期、用途地域和管理形态，再核对居住事实、对面周知、消防、安全、垃圾和30分钟响应。",
-    "lastVerified": "2026-08-11",
-    "reviewDue": "2026-09-10",
+    "lastVerified": "2026-09-21",
+    "reviewDue": "2026-11-20",
     "status": "新规已核验",
     "statusTone": "warning",
     "contentLevel": "L3",
@@ -1043,8 +1043,8 @@
           "url": "https://www.city.edogawa.tokyo.jp/e055/kenko/eisei/kankyo/syukuhakujigyoho/juutakusyukuhakujigyou-kaishi.html"
         }
       ],
-      "verifiedAt": "2026-08-11",
-      "reviewDue": "2026-09-10"
+      "verifiedAt": "2026-09-21",
+      "reviewDue": "2026-11-20"
     }
   }
 ]
