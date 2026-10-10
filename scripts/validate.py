@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -116,6 +117,7 @@ def main() -> int:
 
     errors: list[str] = []
     warnings: list[str] = []
+    today = date.today()
     html_files = sorted(ROOT.rglob("*.html"))
     inbound_targets: set[Path] = {ROOT / "index.html"}
     if not html_files:
@@ -123,6 +125,14 @@ def main() -> int:
 
     for page in html_files:
         text = page.read_text(encoding="utf-8")
+        review_dates = re.findall(
+            r'<span>(?:复核期限|下次复核|复核)</span>\s*<strong>(\d{4}-\d{2}-\d{2})</strong>',
+            text,
+        )
+        for review_date in review_dates:
+            due = date.fromisoformat(review_date)
+            if due < today:
+                errors.append(f"Page {page.relative_to(ROOT)} review overdue: {due}")
         if page.name != "404.html":
             for marker in ('id="main-content"', "data-site-header", "data-site-footer"):
                 if marker not in text:
@@ -172,7 +182,6 @@ def main() -> int:
     slugs = [ward["slug"] for ward in wards]
     if len(slugs) != len(set(slugs)):
         errors.append("Duplicate ward slug")
-    today = date.today()
     priority_wards = {
         "shinjuku", "shibuya", "toshima", "nakano", "taito",
         "sumida", "chuo", "chiyoda", "arakawa",

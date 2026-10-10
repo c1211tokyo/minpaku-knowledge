@@ -246,9 +246,9 @@
     "officialUrl": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.html",
     "restrictionSummary": "2026-10-01起受理的新届出无论家主/管理者是否常驻，原则上周一正午至周六正午不得实施；2026-09-30前受理设施保留旧期间规则。",
     "precheck": "先锁定完整届出资料到达日，再区分10月前后规则；完成15日前周知、15米/学校110米对象、消防记录、30分钟响应和事业系垃圾处理。",
-    "lastVerified": "2026-09-21",
-    "reviewDue": "2026-11-20",
-    "status": "施行前过渡期",
+    "lastVerified": "2026-10-08",
+    "reviewDue": "2026-12-07",
+    "status": "新规已施行",
     "statusTone": "warning",
     "contentLevel": "L3",
     "tags": [
@@ -260,7 +260,7 @@
     ],
     "minpakuRestriction": {
       "researchStatus": "verified",
-      "changeStatus": "transition",
+      "changeStatus": "recent-change",
       "areaRestriction": "台東区全域适用区级规则；2026-10-01前后的届出受理日决定是否仍可使用管理者常驻例外。",
       "periodRestriction": "截至2026-09-30，管理者不常驻设施原则上周一正午至周六正午不得实施（祝日、年末年始除外）；2026-10-01起受理的新届出，不论常驻与否均适用该禁止期间。",
       "allowedPeriodSummary": "10月起新受理设施原则上仅周六正午至周一正午及条例排除窗口；9月30日前受理设施继续按旧规则，常驻型仍可在国家180日上限内实施。",
@@ -284,16 +284,16 @@
           "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/todokedebi.html"
         },
         {
-          "title": "台東区2026年7月届出手册",
-          "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.files/202607tebiki.pdf"
+          "title": "台東区2026年10月届出手册",
+          "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpanku20180613_003.files/tebiki10-2.pdf"
         },
         {
           "title": "台東区届出前手续",
           "url": "https://www.city.taito.lg.jp/kenchiku/jutaku/eisei/jutakulaw/minpaku20180613_002.html"
         }
       ],
-      "verifiedAt": "2026-09-21",
-      "reviewDue": "2026-11-20"
+      "verifiedAt": "2026-10-08",
+      "reviewDue": "2026-12-07"
     }
   },
   {
@@ -755,44 +755,48 @@
     "department": "北区保健所 生活衛生課 環境衛生",
     "phone": "03-3919-0720",
     "officialUrl": "https://www.city.kita.lg.jp/socialcare-health/hygiene/1008979/1008980/1008989/1008990.html",
-    "restrictionSummary": "现行官方手续要求事前咨询、消防记录、安全清单、管理体制和现场调查；2026年公开的新条例仍为草案，不得当作生效规则。",
-    "precheck": "先预约北区保健所，携图纸确认当前规则、消防、安全措施、管理方式、周知和垃圾；不得因页面未列期间限制即判定可经营。",
-    "lastVerified": "2026-09-21",
-    "reviewDue": "2026-11-20",
-    "status": "手续部分核验",
+    "restrictionSummary": "2026-10-07条例已公布：主要手续自11月7日施行；2027-01-07起，住居系用途地域及旅馆用途受限的地区计划区域不再接受新的不在型届出。",
+    "precheck": "先判定居住型、隣接居住不在型或不在型，再核对用途地域、地区计划、11月7日起的新设备与14日前周知、消防及30分钟到场体制。",
+    "lastVerified": "2026-10-08",
+    "reviewDue": "2026-11-06",
+    "status": "新条例分阶段施行",
     "statusTone": "warning",
-    "contentLevel": "L2",
+    "contentLevel": "L3",
     "tags": [
       "official", "consultation", "updated"
     ],
     "minpakuRestriction": {
-      "researchStatus": "partial",
-      "changeStatus": "recent-change",
-      "areaRestriction": "本轮官方手续页未列现行区条例区域限制；是否有新规或个别地区条件待向管辖窗口确认。",
-      "periodRestriction": "本轮官方手续页未列现行区级期间限制，不能据此省略窗口确认。",
-      "allowedPeriodSummary": "国家180日是上限，不代表具体地址已满足北区手续、建筑、消防和管理要求。",
-      "ownerOccupiedRule": "待向管辖窗口确认",
-      "nonOwnerOccupiedRule": "选择管理业者前要求事前咨询，并提交管理体制资料。",
-      "schoolAreaRule": "待向管辖窗口确认",
-      "managementRule": "家主不在型须提交事业者和管理业者的管理体制资料；具体到场要求向区确认。",
-      "neighborNotice": "须制作并提交周知实施记录，范围和方法按北区当前指南确认。",
-      "emergencyResponse": "现地调查会核对管理体制；投诉和紧急响应记录应纳入SOP。",
-      "wasteRule": "须在检查表中说明废弃物处理，具体回收方案待向区确认。",
-      "transitionNote": "北区自2025-11起部分手续改为专用电子申请，并会在届出受理后实施现场调查。2026-03-23公开的新条例目前仍是征求意见草案，在正式公布施行前不作为当前禁止结论。",
-      "practicalImpact": "北区当前重点是事前咨询、建筑士安全确认和现场调查，不能把没有公开期间限制等同于低风险。",
-      "effectiveFrom": null,
+      "researchStatus": "verified",
+      "changeStatus": "transition",
+      "areaRestriction": "2027-01-07起，不在型在八类住居系用途地域，以及地区计划中禁止旅馆或酒店用途建筑的区域，原则上全日限制；敷地过半位于限制区时按限制区处理。",
+      "periodRestriction": "2027-01-07起，限制区域内不在型为全期间限制，即不能新设不在型届出；限制区域外仍受国家每年180日上限约束。",
+      "allowedPeriodSummary": "居住型及符合法定条件的隣接居住不在型不适用第16条全日限制；不在型须先判定地址是否落入限制区域，不能仅以180日上限测算。",
+      "ownerOccupiedRule": "居住型不适用第16条不在型全日限制，但仍须满足11月7日起施行的设备、周知、投诉响应等义务。",
+      "nonOwnerOccupiedRule": "2027-01-07起，限制区域内不在型不得新届出；施行日前已经依法届出的住宅不追溯适用第16条。",
+      "schoolAreaRule": "条例未设置学校周边独立期间限制；具体地址仍须叠加用途地域、地区计划、建筑和消防条件。",
+      "managementRule": "须区分居住型、隣接居住不在型与不在型；不在型还须遵守国家管理委托规则，并提交相应管理体制资料。",
+      "neighborNotice": "2026-11-22以后拟届出的项目，原则须在届出14日前完成2次以上说明会、书面配布或送付及现场掲示；对象包括相邻敷地、隔路20米内、同栋使用者、町会/自治会代表、管理组合等。",
+      "emergencyResponse": "须建立接到投诉或询问后30分钟内到场的体制，并将处理记录保存3年。",
+      "wasteRule": "须设置有盖且容量足够的卫生保管容器；具体事业系废弃物回收路线仍须向清扫事务所确认。",
+      "transitionNote": "条例于2026-10-07公布。设备、周知、投诉响应等主要规定自2026-11-07施行，其中事前周知适用于11月22日以后拟届出者；不在型区域限制自2027-01-07施行，既存届出不追溯。",
+      "practicalImpact": "新项目应先锁定届出类型和地址分区，再倒排说明会与届出日；限制区内不在型若不能在2027-01-07前依法完成届出，应暂停该路径并向区确认。",
+      "effectiveFrom": "2026-11-07",
       "officialSources": [
         {
           "title": "北区住宅宿泊事业官方入口",
           "url": "https://www.city.kita.lg.jp/socialcare-health/hygiene/1008979/1008980/1008989/1008990.html"
         },
         {
-          "title": "北区住宅宿泊事业条例草案（未生效）",
+          "title": "北区住宅宿泊事业条例公众意见结果",
           "url": "https://www.city.kita.lg.jp/city-information/feedback/1014238/1019605/1025303.html"
+        },
+        {
+          "title": "北区住宅宿泊事业条例制定（2026年10月7日公布）",
+          "url": "https://www.city.kita.lg.jp/socialcare-health/hygiene/1008979/1008980/1008989/1026707.html"
         }
       ],
-      "verifiedAt": "2026-09-21",
-      "reviewDue": "2026-11-20"
+      "verifiedAt": "2026-10-08",
+      "reviewDue": "2026-11-06"
     }
   },
   {
@@ -929,8 +933,8 @@
     "officialUrl": "https://www.city.adachi.tokyo.jp/sekatsuese/minpakujourei.html",
     "restrictionSummary": "住居专用地域周一正午至周五正午不得实施；法定休日有例外，12月31日正午至1月3日正午全面限制。",
     "precheck": "从区专题进入当前条例和手续页，查用途地域、期间、家主类型、近邻、消防、规约、垃圾和响应体制。",
-    "lastVerified": "2026-07-06",
-    "reviewDue": "2026-10-04",
+    "lastVerified": "2026-10-08",
+    "reviewDue": "2026-12-07",
     "status": "规则已核验",
     "statusTone": "good",
     "contentLevel": "L3",
@@ -959,8 +963,8 @@
           "url": "https://www.city.adachi.tokyo.jp/sekatsuese/minpakujourei.html"
         }
       ],
-      "verifiedAt": "2026-07-06",
-      "reviewDue": "2026-10-04"
+      "verifiedAt": "2026-10-08",
+      "reviewDue": "2026-12-07"
     }
   },
   {
