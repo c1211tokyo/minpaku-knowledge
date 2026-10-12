@@ -26,3 +26,10 @@
 - 修改后运行 python3 scripts/validate.py。
 - 法规或区级来源更新时运行 python3 scripts/validate.py --external。
 - 发布前检查桌面、移动端、键盘操作、访问门禁、搜索、区筛选、清单、本机保存和打印视图。
+
+## Cursor Cloud specific instructions
+
+- 无依赖安装。环境启动脚本在 4175 端口未被占用时，用 tmux 会话 `minpaku` 执行 `python3 -m http.server 4175 --bind 0.0.0.0`。
+- 修改后运行 `python3 scripts/validate.py`。只有在核对官方外链时才加 `--external`。
+- 访问门禁是站点的一部分。不要移除它，也不要在页面里写死绕过方式。
+
