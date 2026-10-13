@@ -36,15 +36,19 @@ class LinkParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.links: list[str] = []
+        self.link_lines: list[int] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
         if tag == "a" and values.get("href"):
             self.links.append(values["href"] or "")
+            self.link_lines.append(self.getpos()[0])
         if tag in {"img", "script", "link"} and values.get("src"):
             self.links.append(values["src"] or "")
+            self.link_lines.append(self.getpos()[0])
         if tag == "link" and values.get("href"):
             self.links.append(values["href"] or "")
+            self.link_lines.append(self.getpos()[0])
 
 
 def resolve_internal(page: Path, href: str) -> Path | None:
@@ -70,21 +74,60 @@ def load_json(path: Path):
         return json.load(handle)
 
 
-def external_urls(html_files: list[Path]) -> set[str]:
-    urls: set[str] = set()
+def json_location(path: Path, *parts: str | int) -> str:
+    """Locate a JSON field by its path, including repeated keys and values."""
+    text = path.read_text(encoding="utf-8")
+    decoder = json.JSONDecoder()
+
+    def skip_space(offset: int) -> int:
+        while offset < len(text) and text[offset].isspace():
+            offset += 1
+        return offset
+
+    offset = skip_space(0)
+    field_offset = offset
+    for part in parts:
+        cursor = skip_space(offset + 1)
+        index = 0
+        while True:
+            field_offset = cursor
+            if isinstance(part, str):
+                key, cursor = decoder.raw_decode(text, cursor)
+                cursor = skip_space(skip_space(cursor) + 1)  # colon
+            else:
+                key = index
+            if key == part:
+                offset = cursor
+                break
+            _, cursor = decoder.raw_decode(text, cursor)
+            cursor = skip_space(cursor)
+            if text[cursor] != ",":
+                raise KeyError(parts)
+            cursor = skip_space(cursor + 1)
+            index += 1
+    line = text.count("\n", 0, field_offset) + 1
+    return f"{path.relative_to(ROOT)}:{line}"
+
+
+def external_urls(html_files: list[Path]) -> dict[str, set[str]]:
+    urls: dict[str, set[str]] = {}
     for page in html_files:
         parser = LinkParser()
         parser.feed(page.read_text(encoding="utf-8"))
-        for href in parser.links:
+        for href, line in zip(parser.links, parser.link_lines):
             parsed = urlparse(href)
             if parsed.scheme in {"http", "https"} and parsed.netloc != SITE_DOMAIN:
-                urls.add(href.split("#", 1)[0])
-    for source in load_json(ROOT / "data" / "sources.json"):
-        urls.add(source["url"])
-    for ward in load_json(ROOT / "data" / "wards.json"):
-        urls.add(ward["officialUrl"])
-        for source in ward.get("minpakuRestriction", {}).get("officialSources", []):
-            urls.add(source["url"])
+                urls.setdefault(href.split("#", 1)[0], set()).add(f"{page.relative_to(ROOT)}:{line}")
+    sources_path = ROOT / "data" / "sources.json"
+    for index, source in enumerate(load_json(sources_path)):
+        urls.setdefault(source["url"], set()).add(json_location(sources_path, index, "url"))
+    wards_path = ROOT / "data" / "wards.json"
+    for index, ward in enumerate(load_json(wards_path)):
+        urls.setdefault(ward["officialUrl"], set()).add(json_location(wards_path, index, "officialUrl"))
+        for source_index, source in enumerate(ward.get("minpakuRestriction", {}).get("officialSources", [])):
+            urls.setdefault(source["url"], set()).add(
+                json_location(wards_path, index, "minpakuRestriction", "officialSources", source_index, "url")
+            )
     return urls
 
 
@@ -125,14 +168,15 @@ def main() -> int:
 
     for page in html_files:
         text = page.read_text(encoding="utf-8")
-        review_dates = re.findall(
+        review_dates = re.finditer(
             r'<span>(?:复核期限|下次复核|复核)</span>\s*<strong>(\d{4}-\d{2}-\d{2})</strong>',
             text,
         )
         for review_date in review_dates:
-            due = date.fromisoformat(review_date)
+            due = date.fromisoformat(review_date.group(1))
             if due < today:
-                errors.append(f"Page {page.relative_to(ROOT)} review overdue: {due}")
+                line = text.count("\n", 0, review_date.start(1)) + 1
+                errors.append(f"{page.relative_to(ROOT)}:{line}: Page review overdue: {due}")
         if page.name != "404.html":
             for marker in ('id="main-content"', "data-site-header", "data-site-footer"):
                 if marker not in text:
@@ -151,11 +195,11 @@ def main() -> int:
                 errors.append(f"{page.relative_to(ROOT)} missing access marker {marker}")
         parser_obj = LinkParser()
         parser_obj.feed(text)
-        for href in parser_obj.links:
+        for href, line in zip(parser_obj.links, parser_obj.link_lines):
             target = resolve_internal(page, href)
             if target is not None and not target.exists():
                 errors.append(
-                    f"{page.relative_to(ROOT)} -> missing {target.relative_to(ROOT) if target.is_relative_to(ROOT) else target}"
+                    f"{page.relative_to(ROOT)}:{line}: {href} -> missing {target.relative_to(ROOT) if target.is_relative_to(ROOT) else target}"
                 )
             elif target is not None:
                 inbound_targets.add(target)
@@ -199,7 +243,7 @@ def main() -> int:
         "managementRule", "neighborNotice", "emergencyResponse", "wasteRule",
         "transitionNote", "practicalImpact",
     )
-    for ward in wards:
+    for ward_index, ward in enumerate(wards):
         page = ROOT / "tokyo" / ward["slug"] / "index.html"
         if not page.exists():
             errors.append(f"Missing ward page: {ward['slug']}")
@@ -214,7 +258,8 @@ def main() -> int:
                 errors.append(f"Ward {ward['slug']} missing {field}")
         due = date.fromisoformat(ward["reviewDue"])
         if due < today:
-            errors.append(f"Ward {ward['name']} review overdue: {due}")
+            location = json_location(ROOT / "data" / "wards.json", ward_index, "reviewDue")
+            errors.append(f"{location}: Ward {ward['name']} review overdue: {due}")
         restriction = ward.get("minpakuRestriction")
         if not isinstance(restriction, dict):
             errors.append(f"Ward {ward['slug']} missing minpakuRestriction")
@@ -243,7 +288,8 @@ def main() -> int:
             if restriction.get("reviewDue"):
                 restriction_due = date.fromisoformat(restriction["reviewDue"])
                 if restriction_due < today:
-                        errors.append(f"Ward {ward['name']} restriction review overdue: {restriction_due}")
+                    location = json_location(ROOT / "data" / "wards.json", ward_index, "minpakuRestriction", "reviewDue")
+                    errors.append(f"{location}: Ward {ward['name']} restriction review overdue: {restriction_due}")
             if page.exists():
                 page_text = page.read_text(encoding="utf-8")
                 for heading in ("可运营期间摘要", "学校周边", "管理业者要求", "官方来源"):
@@ -392,12 +438,14 @@ def main() -> int:
         errors.append(f"Sitemap target has no page: {url}")
 
     if args.external:
-        urls = sorted(external_urls(html_files))
+        references = external_urls(html_files)
+        urls = sorted(references)
         for index, url in enumerate(urls, 1):
             result, detail = check_external(url)
             print(f"[external {index}/{len(urls)}] {result.upper():7} {detail:12} {url}")
             if result == "error":
-                errors.append(f"External link failed ({detail}): {url}")
+                locations = ", ".join(sorted(references[url]))
+                errors.append(f"{locations}: External link failed ({detail}): {url}")
             elif result == "warning":
                 warnings.append(f"External link inconclusive ({detail}): {url}")
             time.sleep(0.15)
