@@ -481,7 +481,7 @@
     "relatedPages": [
       "/tokyo/toshima/"
     ],
-    "verifiedAt": "2026-09-21",
+    "verifiedAt": "2026-10-21",
     "status": "transition"
   },
   {
@@ -501,7 +501,7 @@
     "relatedPages": [
       "/tokyo/toshima/"
     ],
-    "verifiedAt": "2026-09-21",
+    "verifiedAt": "2026-10-21",
     "status": "transition"
   },
   {
@@ -810,7 +810,8 @@
     "status": "current"
   },
   {"id":"minato-rule","authority":"港区","title":"住宅宿泊事業（民泊）を行う皆様へ","url":"https://www.city.minato.tokyo.jp/kankyoueiseishidou/minpaku2.html","grade":"A","system":"住宅宿泊事业","region":"港区","documentType":"区规则","topics":["家主不在型","期间限制","14日前周知"],"relatedPages":["/tokyo/minato/"],"verifiedAt":"2026-09-21","status":"current"},
-  {"id":"bunkyo-rule","authority":"文京区","title":"住宅宿泊事業（民泊）","url":"https://www.city.bunkyo.lg.jp/b026/p003112/index.html","grade":"A","system":"住宅宿泊事业","region":"文京区","documentType":"区规则","topics":["用途地域","文教地区","期间限制"],"relatedPages":["/tokyo/bunkyo/"],"verifiedAt":"2026-09-21","status":"current"},
+  {"id":"bunkyo-rule","authority":"文京区","title":"住宅宿泊事業（民泊）","url":"https://www.city.bunkyo.lg.jp/b026/p003112/index.html","grade":"A","system":"住宅宿泊事业","region":"文京区","documentType":"区规则","topics":["用途地域","文教地区","期间限制","2027-01-07","说明会"],"relatedPages":["/tokyo/bunkyo/"],"verifiedAt":"2026-10-21","status":"transition"},
+  {"id":"bunkyo-reform","authority":"文京区","title":"住宅宿泊事業条例・規則改正概要","url":"https://www.city.bunkyo.lg.jp/documents/3037/kaiseigaiyou.pdf","grade":"A","system":"住宅宿泊事业","region":"文京区","documentType":"规则摘要","topics":["2027-01-07","全区限制","说明会","代理人","过渡措施"],"relatedPages":["/tokyo/bunkyo/"],"verifiedAt":"2026-10-21","status":"transition"},
   {"id":"koto-rule","authority":"江東区","title":"住宅宿泊事業に関する手続き","url":"https://www.city.koto.lg.jp/260403/fukushi/ese/kankyo/minpaku_index.html","grade":"A","system":"住宅宿泊事业","region":"江東区","documentType":"区规则","topics":["全区限制","周知","届出"],"relatedPages":["/tokyo/koto/"],"verifiedAt":"2026-09-07","status":"current"},
   {"id":"shinagawa-rule","authority":"品川区","title":"住宅宿泊事業法に関する手続き","url":"https://www.city.shinagawa.tokyo.jp/PC/kenkou/kenkou-eisei/kenkou-eisei-kankyo/hpg000033251.html","grade":"A","system":"住宅宿泊事业","region":"品川区","documentType":"区规则","topics":["商业地域","文教地区","建筑士"],"relatedPages":["/tokyo/shinagawa/"],"verifiedAt":"2026-09-07","status":"current"},
   {"id":"meguro-rule","authority":"目黒区","title":"住宅宿泊事業の適正な運営の確保に関する条例","url":"https://www.city.meguro.tokyo.jp/seikatsueisei/kenkoufukushi/eisei/minpaku.html","grade":"A","system":"住宅宿泊事业","region":"目黒区","documentType":"区规则","topics":["全区限制","15日前周知","期间限制"],"relatedPages":["/tokyo/meguro/"],"verifiedAt":"2026-09-07","status":"current"},

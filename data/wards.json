@@ -202,40 +202,44 @@
     "department": "文京保健所 生活衛生課 環境衛生担当",
     "phone": "03-5803-1227",
     "officialUrl": "https://www.city.bunkyo.lg.jp/b026/p003112/index.html",
-    "restrictionSummary": "住居专用地域、住居地域、准工业地域和文教地区，周日正午至周五正午不得实施。",
-    "precheck": "查用途地域和文教地区，按正午口径排期，并向区确认周知、垃圾、消防和管理附件。",
-    "lastVerified": "2026-09-21",
-    "reviewDue": "2026-11-20",
-    "status": "规则已核验",
-    "statusTone": "good",
+    "restrictionSummary": "现行限制区域周日正午至周五正午不得实施；2027-01-07起，新受理届出的限制区域扩大为文京区全域。",
+    "precheck": "先确认受理日和新旧规则，再核对15日前周知、说明会、变更程序及境外个人代理人要求。",
+    "lastVerified": "2026-10-21",
+    "reviewDue": "2026-12-21",
+    "status": "2027新规过渡期",
+    "statusTone": "warning",
     "contentLevel": "L3",
     "tags": [
       "official", "restriction", "updated"
     ],
     "minpakuRestriction": {
       "researchStatus": "verified",
-      "changeStatus": "stable",
-      "areaRestriction": "住居专用地域、住居地域、准工业地域和文教地区适用区级实施期间限制。",
-      "periodRestriction": "限制区域内周日正午至周五正午不得实施。",
-      "allowedPeriodSummary": "限制区域原则上周五正午至周日正午；其他区域可在国家180日上限内实施。",
-      "ownerOccupiedRule": "官方当前摘要未列家主居住型区级例外，适用前待向管辖窗口确认。",
-      "nonOwnerOccupiedRule": "家主不在型须按国家规则委托已登记住宅宿泊管理业者。",
+      "changeStatus": "transition",
+      "areaRestriction": "现行规则仅对住居专用地域、住居地域、准工业地域和文教地区限制；2027-01-07起，对施行日以后受理的届出扩大为文京区全域。",
+      "periodRestriction": "限制区域内周日正午至周五正午不得实施；2027-01-07起新受理设施在全区适用。",
+      "allowedPeriodSummary": "现行限制区域原则上周五正午至周日正午；2027-01-07起的新受理设施在全区仅可避开限制窗口，并受国家180日上限。",
+      "ownerOccupiedRule": "满足届出时已连续居住3年以上、住宿期间不离开、自行管理三项条件时，新规下可不举办说明会；是否满足须由区确认。",
+      "nonOwnerOccupiedRule": "家主不在型须委托已登记住宅宿泊管理业者；日本国内无住所的个人事业者自2027-01-07起须选任国内代理人，既存设施也适用。",
       "schoolAreaRule": "待向管辖窗口确认",
-      "managementRule": "家主不在型的委托范围、紧急联络和到场体制须在届出前确认。",
-      "neighborNotice": "待向管辖窗口确认",
+      "managementRule": "家主不在型的委托范围、紧急联络和到场体制须在届出前确认；变更管理委托对象时新规要求再周知并举办说明会。",
+      "neighborNotice": "2027-01-07起的新届出须在届出15日前发放规定书面，并在届出前一日之前举办说明会；规定的长期自住自行管理者可免说明会。",
       "emergencyResponse": "国家法定投诉响应义务适用；区级到场时限待向管辖窗口确认。",
       "wasteRule": "营业垃圾按事业系废弃物处理，具体合同和排出方法待向区确认。",
-      "transitionNote": "本轮未发现官方页面列示近期过渡措施。",
-      "practicalImpact": "限制区域类型较多，不能只查住居专用地域；文教地区也必须叠加确认。",
-      "effectiveFrom": null,
+      "transitionNote": "新规2027-01-07施行；区提示按旧规则完成者应在2026-12-22前周知并于2027-01-06前完成补正。区域限制对施行日前已受理届出不追溯，代理人及部分变更规则适用于既存设施。",
+      "practicalImpact": "必须确认受理日而非仅看提交日；新受理设施将失去非限制区域的平日营业窗口，并新增说明会或代理人等程序。",
+      "effectiveFrom": "2027-01-07",
       "officialSources": [
         {
           "title": "文京区住宅宿泊事业官方入口",
           "url": "https://www.city.bunkyo.lg.jp/b026/p003112/index.html"
+        },
+        {
+          "title": "文京区条例・规则改正概要",
+          "url": "https://www.city.bunkyo.lg.jp/documents/3037/kaiseigaiyou.pdf"
         }
       ],
-      "verifiedAt": "2026-09-21",
-      "reviewDue": "2026-11-20"
+      "verifiedAt": "2026-10-21",
+      "reviewDue": "2026-12-21"
     }
   },
   {
@@ -732,8 +736,8 @@
       "neighborNotice": "届出14日前向20米范围住民周知并举办事前说明会。",
       "emergencyResponse": "通报时须在30分钟内到场并着手处理。",
       "wasteRule": "须按事业系垃圾处理并与相应处理业者确认合同。",
-      "transitionNote": "手续强化已自2025-12-15实施；区域与期间限制自2026-12-16实施且涉及既存设施。生效前须再次核对细则。",
-      "practicalImpact": "当前和2026-12-16后的规则不同；拟开业地址要同时核对是否位于新设禁止区域及未来120日窗口。",
+      "transitionNote": "手续强化已自2025-12-15实施；区域与期间限制自2026-12-16实施且涉及既存设施。即使12月15日前提交，若12月16日以后才受理，仍可能适用新区域限制。",
+      "practicalImpact": "当前标识交付可能需3个月以上；必须以书类齐全且形式要件合格后的受理日判断新旧规则，不得把已提交当成已受理。",
       "effectiveFrom": "2026-12-16",
       "officialSources": [
         {
@@ -745,8 +749,8 @@
           "url": "https://www.city.toshima.lg.jp/documents/53829/gaiyou1.pdf"
         }
       ],
-      "verifiedAt": "2026-09-21",
-      "reviewDue": "2026-11-20"
+      "verifiedAt": "2026-10-21",
+      "reviewDue": "2026-12-15"
     }
   },
   {
